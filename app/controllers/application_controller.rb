@@ -21,6 +21,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    @oldchunks = OldChunk.all
   erb :index
   end
 

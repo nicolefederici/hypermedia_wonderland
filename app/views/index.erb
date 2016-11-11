@@ -1,0 +1,17 @@
+
+
+<div>
+
+
+  <h1>scenes</h1>
+  <a href='/oldchunks/new'>create scene</a>
+
+<% @oldchunks.each do |oldchunk| %>
+ 
+ <h2><%= oldchunk.title %></h2>
+ <p><%= oldchunk.text %></p>
+ <% end %>
+
+
+
+</div>
