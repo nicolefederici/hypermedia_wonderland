@@ -1,0 +1,18 @@
+<h2>Users</h2>
+<% unless locals.empty? %>
+  <%= message %>
+<% end %>
+<% if session[:username_taken] == true %>
+<p>Hey, somebody already has that kick butt username. Pick your own!</p>
+<% end %>
+
+
+
+<h3>Signup</h3>
+
+<form method="post" action="/signup">
+<input type="text" name="username" placeholder="username"><br><br><br>
+  <input type="text" name="email" placeholder="email"><br><br><br>
+  <input type="password" name="password" placeholder="password"><br><br><br>
+</input><input type="submit" id="submit" value="submit" class= "btn btn-primary"></input>
+</form>
