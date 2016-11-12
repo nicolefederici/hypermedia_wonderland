@@ -1,0 +1,8 @@
+<p>Here are your projects, <%= @user.username %></p>
+
+
+
+<% @user.projects.each do |project| %>
+ 
+ <p><%= project.title %></p>
+ <% end %>

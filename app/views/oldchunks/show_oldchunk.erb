@@ -1,0 +1,9 @@
+<p>Here are your Source Scenes (for now), <%= @user.username %></p>
+
+
+
+<% @user.oldchunks.each do |oldchunk| %>
+ 
+ <p><%= oldchunk.title %></p>
+ <p><%= oldchunk.text %></p><br>
+ <% end %>

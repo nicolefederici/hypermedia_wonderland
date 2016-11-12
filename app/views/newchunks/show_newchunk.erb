@@ -1,0 +1,12 @@
+<h1> All Versions of a given Scene </h1>
+
+
+
+<% @newchunks.each do |newchunk| %>
+ 
+ <p><%= newchunk.title %></p>
+ <p><%= newchunk.text %></p>
+ <p><%= newchunk.image_link %></p>
+ <p><%= newchunk.video_link %></p>
+ <p><%= newchunk.sound_link %></p><br>
+ <% end %>
