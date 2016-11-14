@@ -10,10 +10,14 @@
 
 <% @oldchunks.each do |oldchunk| %>
  
- <h2><a href="/newchunks/oldchunk-#{oldchunk.id}"><%= oldchunk.title %></a></h2>
+ <h2><a href="/newchunks/all-#{oldchunk.id}"><%= oldchunk.title %></a></h2>
  <p><%= oldchunk.text %></p>
  <% end %>
 
+<!--this is a list of all the current users on a project w link to their show page of all their contributions to this projects-->
+<% @users.each do |user| %>
+<h2><a href="/users/#{user.slug}/show"><%= user.username %></a></h2>
+ <% end %>
 
 
 </div>
