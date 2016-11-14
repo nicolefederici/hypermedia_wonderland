@@ -18,7 +18,7 @@ get '/newchunks' do
   end
 
   post '/newchunks' do
-    if params[:] == ""
+    if params[:content] == ""
       redirect to "/tweets/new"
     else
       current_user.tweets.create(content: params[:content])

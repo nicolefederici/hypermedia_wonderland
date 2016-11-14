@@ -1,0 +1,20 @@
+<!--":'projects/projects_index' AND '/projects'"-->
+
+<h1>Projects Index</h1>
+
+<div>
+
+
+  <h1>Which Project?</h1>
+
+  <!--these buttons will be a seris of links attached to buttons that when pushed, will take you to the index page of a particular project-->
+ 
+
+  <% @projects.each do |project| %>
+    <p><a href="projects/#{project.pslug}/index"><%= project.title %></a></p>
+    <% end %>
+
+
+
+ 
+</div>
