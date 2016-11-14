@@ -13,4 +13,8 @@ class ProjectController < ApplicationController
   erb :'oldchunks/oldchunks'
   end
 
+  get '/projects/new' do
+    erb :'projects/create_project'
+  end
+
 end
