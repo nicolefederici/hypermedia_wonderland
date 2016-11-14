@@ -7,8 +7,10 @@
   </head>
   <body>
     <nav>
+    <% if logged_in? %>
      <a href="/logout"> Log Out </a>
      <p>Welcome, <%=current_user.username %></p>
+    <%end %>
     </nav>
     
     <div class="container">

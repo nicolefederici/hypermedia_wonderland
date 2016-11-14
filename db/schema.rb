@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112034135) do
+ActiveRecord::Schema.define(version: 20161114231537) do
 
   create_table "comments", force: :cascade do |t|
     t.string  "text"
@@ -54,8 +54,9 @@ ActiveRecord::Schema.define(version: 20161112034135) do
 
   create_table "users", force: :cascade do |t|
     t.string  "username"
-    t.string  "password"
     t.integer "project_id"
+    t.string  "email"
+    t.string  "password_digest"
     t.index ["project_id"], name: "index_users_on_project_id"
   end
 
