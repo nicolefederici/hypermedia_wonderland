@@ -7,4 +7,7 @@ end
 use Rack::MethodOverride
 
 use UserController
+use NewChunkController
+use OldChunkController
+use ProjectController
 run ApplicationController

@@ -20,12 +20,7 @@ class ApplicationController < Sinatra::Base
 
   end
 
-  # when someone has logged in , they land on the "projects index" page that right now, only shows Juliet is the Sun, but will include other pjcts., and this happens, sending them finally to JITS index
-  get 'projects/:pslug/index' do
-    project = Project.find_by_slug(params[:pslug])
-    @oldchunks = OldChunk.where("project_id = ?", project.id)
-  erb :index
-  end
+  
 
   
   

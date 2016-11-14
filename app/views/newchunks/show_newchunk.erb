@@ -1,0 +1,22 @@
+<h1> All Versions of a given Scene Except the Original Source Scene</h1>
+
+
+<!--this is the code that lists all new art versions of the old scene, without listing the old scene itself-->
+
+<% @newchunks.each do |newchunk| %>
+ 
+ <p><%= newchunk.title %></p>
+ <p><%= newchunk.text %></p>
+ <p><%= newchunk.image_link %></p>
+ <p><%= newchunk.video_link %></p>
+ <p><%= newchunk.sound_link %></p><br>
+ <% end %>
+
+
+<!--I need a create button for each scene as well on this page- might put that on the right side vertical... it will use this route:/newchunks/new-->
+
+ <!--I need an edit button that goes to the edit the individual new art scene page for each person's version-->
+
+ <!--I need a trash button for each scene as well-->
+
+ <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
