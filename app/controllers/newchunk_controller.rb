@@ -18,13 +18,15 @@ get '/newchunks' do
   end
 
   post '/newchunks' do
-    if params[:content] == ""
+    if params[:] == ""
       redirect to "/tweets/new"
     else
       current_user.tweets.create(content: params[:content])
       redirect "/tweets"
     end
   end
+# /newchunks/oldchunk-#{oldchunk.id} this is a route to the display all scenes page?
+
 
   get '/tweets/:id' do
     if logged_in?
