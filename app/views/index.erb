@@ -4,11 +4,13 @@
 
 
   <h1>scenes</h1>
+
+  <!--this is a link to the add an oldchunk scene and title to the list of source scenes-->
   <a href='/oldchunks/new'>create scene</a>
 
 <% @oldchunks.each do |oldchunk| %>
  
- <h2><%= oldchunk.title %></h2>
+ <h2><a href="/newchunks/oldchunk-#{oldchunk.id}"><%= oldchunk.title %></a></h2>
  <p><%= oldchunk.text %></p>
  <% end %>
 
