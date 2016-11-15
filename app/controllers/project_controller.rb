@@ -17,4 +17,10 @@ class ProjectController < ApplicationController
     erb :'projects/create_project'
   end
 
+  post '/projects' do
+    project = Project.create(params)
+    project.save
+    redirect("projects/#{project.pslug}/index")
+  end
+
 end

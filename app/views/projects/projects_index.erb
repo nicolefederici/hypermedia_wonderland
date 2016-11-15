@@ -11,7 +11,7 @@
  
 
   <% @projects.each do |project| %>
-    <p><a href="projects/#{project.pslug}/index"><%= project.title %></a></p>
+    <p><a href="projects/<%=project.pslug%>/index"><%= project.title %></a></p>
     <% end %>
 
 
