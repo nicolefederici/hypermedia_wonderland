@@ -11,10 +11,13 @@
  
 
   <% @projects.each do |project| %>
-    <p><a href="projects/<%=project.pslug%>/index"><%= project.title %></a></p>
+    <p><a href="/<%=project.pslug%>/index"><%= project.title %></a></p>
     <% end %>
 
 
+    
+
     <a href='/projects/new'> Create a New Project</a>
+ 
  
 </div>

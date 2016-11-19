@@ -1,23 +1,31 @@
-<h1>Index for Now</h1>
+
+<!--the title of the platform should always nav the user back to the original projects list-->
+
+<h1><a href='/projects'>HYPERMEDIA WONDERLAND</a></h1>
+
+<h1>Index of Scene Structure</h1>
 
 <div>
 
 
-  <h1>scenes</h1>
+    <h1>scenes</h1>
 
-  <!--this is a link to the add an oldchunk scene and title to the list of source scenes-->
-  <a href='/oldchunks/new'>create scene</a>
+    <!--this is a link to the add an oldchunk SCENE and TITLE to the list of source scenes-->
+    <a href='/oldchunks/new'>create scene</a>
 
-<% @oldchunks.each do |oldchunk| %>
- 
- <h2><a href="/newchunks/all-#{oldchunk.id}"><%= oldchunk.title %></a></h2>
- <p><%= oldchunk.text %></p>
- <% end %>
+    <% @oldchunks.each do |oldchunk| %>
+   
+   <div><h2><a href="/<%=@project.slug%>/<%=oldchunk.slug%>/index"><%= oldchunk.title %></a></h2></div>
+   <div><p><%= oldchunk.text %></p></div>
+   <% end %>
 
-<!--this is a list of all the current users on a project w link to their show page of all their contributions to this projects-->
-<% @users.each do |user| %>
-<h2><a href="/users/#{user.slug}/show"><%= user.username %></a></h2>
- <% end %>
+  <!--this is a list of all the current USERS on a project w link to their show page of all their contributions to this projects-->
+  <% @users.each do |user| %>
+  <h2><a href='/users/<%=user.slug%>/show'><%= user.username %></a></h2>
+   <% end %>
 
+
+  <!--the word SCORE should always nav the user to the performance score of all the highest voted versions of each scene in order-->
+  <h1><a href='/<%=@project.slug%>/final_map'>SCORE</a></h1>
 
 </div>

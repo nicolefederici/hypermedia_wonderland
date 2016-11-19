@@ -1,4 +1,4 @@
-class NewChunkController < ApplicationController
+class NewchunkController < ApplicationController
 
 get '/newchunks' do
     if logged_in?
