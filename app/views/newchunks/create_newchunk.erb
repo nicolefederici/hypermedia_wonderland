@@ -5,7 +5,7 @@
  <div><h2><a href="/<%=@project.pslug%>/index"><%=@project.title%> (index)</a></h2></div>
 
 <form method="post" action="/newchunks">
-  <input type="hidden" name="oldchunk_id" value="<%=oldchunk.id%>">
+  <input type="hidden" name="oldchunk_id" value="<%=@oldchunk.id%>">
   <input type="text" name="title" placeholder="title"><br>
   <textarea type="text" name="text" placeholder="text"></textarea><br>
   <input type="url" name="video_link" placeholder="video link"><br>
