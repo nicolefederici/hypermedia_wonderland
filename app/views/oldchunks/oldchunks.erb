@@ -1,21 +1,24 @@
 
+<h1><a href='/projects'>HYPERMEDIA WONDERLAND</a></h1>
+<h2><%=@project.title%></h2>
+
 <!--the title of the platform should always nav the user back to the original projects list-->
 
-<h1><a href='/projects'>HYPERMEDIA WONDERLAND</a></h1>
 
-<h1>Index of Scene Structure</h1>
+
+<h3>Index of Scene Structure</h3>
 
 <div>
 
 
-    <h1>scenes</h1>
+    <h4>scenes</h4>
 
     <!--this is a link to the add an oldchunk SCENE and TITLE to the list of source scenes-->
-    <a href='/oldchunks/new'>create scene</a>
+    <h5><a href='/<%=@project.pslug%>/oldchunk/new'>create scene</a></h5>
 
     <% @oldchunks.each do |oldchunk| %>
    
-   <div><h2><a href="/<%=@project.slug%>/<%=oldchunk.slug%>/index"><%= oldchunk.title %></a></h2></div>
+   <div><h2><a href="/<%=@project.pslug%>/<%=oldchunk.oslug%>/index"><%= oldchunk.title %></a></h2></div>
    <div><p><%= oldchunk.text %></p></div>
    <% end %>
 
@@ -26,6 +29,6 @@
 
 
   <!--the word SCORE should always nav the user to the performance score of all the highest voted versions of each scene in order-->
-  <h1><a href='/<%=@project.slug%>/final_map'>SCORE</a></h1>
+  <h1><a href='/<%=@project.pslug%>/final_map'>SCORE</a></h1>
 
 </div>

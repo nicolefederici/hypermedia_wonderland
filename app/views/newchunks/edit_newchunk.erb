@@ -9,3 +9,12 @@
   <input type="url" name="sound_link" value="<%= @newchunk.sound_link %>"><br>
   <input type="submit" id="submit" value="submit" class="btn btn-primary"></input>
 </form>
+
+<form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
+<input type="hidden" name="_method" id="hidden" value="DELETE"></input><input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
+</form>
+
+<div><h2><a href="/<%=@project.pslug%>/index"><%=AUTOMATE THE SCENE TITLE HERE%></a></h2></div>
+ <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
+
+ <div><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>

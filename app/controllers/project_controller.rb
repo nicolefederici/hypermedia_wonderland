@@ -13,6 +13,10 @@ class ProjectController < ApplicationController
   erb :'oldchunks/oldchunks'
   end
 
+  get '/pslug/final_map' do
+    erb :'final_map'
+  end
+
   get '/projects/new' do
     erb :'projects/create_project'
   end
@@ -20,7 +24,7 @@ class ProjectController < ApplicationController
   post '/projects' do
     project = Project.create(params)
     project.save
-    redirect("#{project.slug}/oldchunk/new")
+    redirect("#{project.pslug}/oldchunk/new")
   end
 
 end

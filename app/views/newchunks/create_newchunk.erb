@@ -2,10 +2,12 @@
 
 
 
+ <div><h2><a href="/<%=@project.pslug%>/index"><%=@project.title%> (index)</a></h2></div>
 
 <form method="post" action="/newchunks">
+  <input type="hidden" name="oldchunk_id" value="<%=oldchunk.id%>">
   <input type="text" name="title" placeholder="title"><br>
-  <textarea type="text" name="text" placeholder="text"><br>
+  <textarea type="text" name="text" placeholder="text"></textarea><br>
   <input type="url" name="video_link" placeholder="video link"><br>
   <input type="url" name="image_link" placeholder="image link"><br>
   <input type="url" name="sound_link" placeholder="soundcloud link"><br>
@@ -13,3 +15,10 @@
  
 <input type="submit" id="submit" value="submit" class= "btn btn-primary">
 </form>
+
+<div><h2><a href="/<%=@project.pslug%>/<%=@oldchunk.oslug%>/index"><%=@oldchunk.title%></a></h2></div>
+ <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
+
+ <div><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>
+
+ 

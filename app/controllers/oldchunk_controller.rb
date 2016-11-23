@@ -1,7 +1,7 @@
 class OldchunkController < ApplicationController
 
-  get "/:pslug/oldchunks/new" do
-    @project = Project.find_by_slug(params[:pslug])
+  get "/:pslug/oldchunk/new" do
+    @project = Project.find_by_pslug(params[:pslug])
     erb :"oldchunks/create_oldchunk"
     end
 

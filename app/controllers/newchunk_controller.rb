@@ -1,79 +1,84 @@
 class NewchunkController < ApplicationController
 
-get '/newchunks' do
-    if logged_in?
-      @newchunks = Newchunk.all
-      erb :'newchunks/?????tweets'
-    else
-      redirect to '/login'
-    end
-  end
+# get '/newchunks' do
+#     if logged_in?
+#       @newchunks = Newchunk.all
+#       erb :'newchunks/--------'
+#     else
+#       redirect to '/login'
+#     end
+#   end
 
-  get '/newchunks/new' do
-    if logged_in?
-      erb :'newchunks/create_newchunk'
-    else 
-      redirect to '/login'
-    end
-  end
+  # get '/newchunks/new' do
+  #   if logged_in?
+  #     erb :'newchunks/create_newchunk'
+  #   else 
+  #     redirect to '/login'
+  #   end
+  # end
 
   post '/newchunks' do
-    if params[:content] == ""
-      redirect to "/tweets/new"
+    if params[:text] == ""
+      redirect to "/newchunks/create_newchunk"
     else
-      current_user.tweets.create(content: params[:content])
-      redirect "/tweets"
+      newchunk = Newchunk.create(params)
+      newchunk.user_id = current_user.id
+      newchunk.save
+       oldchunk = Oldchunk.find_by_id(newchunk.oldchunk_id)
+        
+        project = Project.find_by_id(oldchunk.project_id)
+        redirect to "/#{project.pslug}/#{oldchunk.oslug}/index"
+      
     end
   end
 # /newchunks/oldchunk-#{oldchunk.id} this is a route to the display all scenes page?
 
 
-  get '/tweets/:id' do
-    if logged_in?
-      @tweet = Tweet.find_by_id(params[:id])
-      erb :'tweets/show_tweet'
-    else 
-      redirect to '/login'
-    end
+  post '/projects' do
+    project = Project.create(params)
+    project.save
+    redirect("#{project.pslug}/oldchunk/new")
   end
 
-  get '/tweets/:id/edit' do
-    if logged_in? 
-      @tweet = Tweet.find_by_id(params[:id])
-      if @tweet.user_id == current_user.id
-        erb :'tweets/edit_tweet'
-      else 
-        redirect to '/tweets'
-      end
-    else 
-      redirect to '/login'
-    end
+
+  get '/:pslug/:oslug/index' do
+    @project = Project.find_by_pslug(params[:pslug])
+    @oldchunk = Oldchunk.find_by_oslug(params[:oslug])
+    @newchunks = Newchunk.where("oldchunk_id = ?", @oldchunk.id)
+    erb :'newchunks/newchunks'
   end
 
-  patch '/tweets/:id' do
+  get '/:pslug/:oslug/create' do
+    @project = Project.find_by_pslug(params[:pslug])
+    @oldchunks = Oldchunk.where("project_id = ?", @project.id)
+    @oldchunk = @oldchunks.first #fix this bullshit
+    erb :'newchunks/create_newchunk'
+  end
+
+  
+  get '/newchunks/:id/edit' do
+    @newchunk = Newchunk.find_by_id(params[:id])
+    erb :'newchunks/edit_newchunk'
+  end
+
+  patch '/newchunks' do
     if params[:content] == ""
-      redirect to "/tweets/#{params[:id]}/edit"
+      redirect to "/newchunks/#{params[:id]}/edit"
     else
-      @tweet = Tweet.find_by_id(params[:id])
-      @tweet.content = params[:content]
-      @tweet.save
-      redirect to "/tweets/#{@tweet.id}"
+      @newchunk = Newchunk.find_by_id(params[:id])
+      @newchunk.content = params[:content]
+      @newchunk.save
+      redirect to "/newchunks/#{@newchunk.id}"
     end
   end
 
-  delete '/tweets/:id/delete' do
-    if logged_in?
-      @tweet = Tweet.find_by_id(params[:id])
-      if @tweet.user_id == current_user.id 
-        @tweet.delete
-        redirect to '/tweets'
-      else 
-        redirect to '/tweets'
+  delete '/newchunks/:id/delete' do
+    newchunk = Newchunk.find_by_id(params[:id]) 
+        oldchunk = Oldchunk.find_by_id(newchunk.oldchunk_id)
+        newchunk.delete
+        project = Project.find_by_id(oldchunk.project_id)
+        redirect to "/#{project.pslug}/#{oldchunk.oslug}/index"
       end
-    else 
-      redirect to '/login'
-    end
-  end
 
 
 

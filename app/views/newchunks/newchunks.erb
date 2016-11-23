@@ -2,7 +2,7 @@
 
 
 <!--this is the code that lists all new art versions of the old scene, without listing the old scene itself-->
-
+<h1><%= @oldchunk.title%></h1>
 <% @newchunks.each do |newchunk| %>
  
  <p><%= newchunk.title %></p>
@@ -10,13 +10,24 @@
  <p><%= newchunk.image_link %></p>
  <p><%= newchunk.video_link %></p>
  <p><%= newchunk.sound_link %></p><br>
+ <%if newchunk.user_id == current_user.id%>
+ <div><h2><a href="/newchunks/<%=newchunk.id%>/edit">edit NEWCHUNK</a></h2></div>
+ <%end%>
+ <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
+<input type="hidden" name="_method" id="hidden" value="DELETE"></input><input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
+</form>
+
+
  <% end %>
 
 
 <!--I need a create button for each scene as well on this page- might put that on the right side vertical... it will use this route:/newchunks/new-->
-
+<div><h2><a href="/<%=@project.pslug%>/<%=@oldchunk.oslug%>/create">CREATE NEWCHUNK FOR SCENE</a></h2></div>
+   
  <!--I need an edit button that goes to the edit the individual new art scene page for each person's version-->
 
  <!--I need a trash button for each scene as well-->
 
- <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
+ <div><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>
+
+ <div><h2><a href="/<%=@project.pslug%>/index"><%=@project.title%> Oldchunk Index </a></h2></div>
