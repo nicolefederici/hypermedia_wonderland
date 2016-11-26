@@ -45,6 +45,7 @@ class NewchunkController < ApplicationController
     @project = Project.find_by_pslug(params[:pslug])
     @oldchunk = Oldchunk.find_by_oslug(params[:oslug])
     @newchunks = Newchunk.where("oldchunk_id = ?", @oldchunk.id)
+    @vote_counts = Like.group(:newchunk_id).count
     erb :'newchunks/newchunks'
   end
 
@@ -82,8 +83,9 @@ class NewchunkController < ApplicationController
         redirect to "/#{project.pslug}/#{oldchunk.oslug}/index"
       end
 
+      post '/comments' do
 
-
+      end
 
 
 end
