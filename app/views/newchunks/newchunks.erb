@@ -4,6 +4,9 @@
 <!--this is the code that lists all new art versions of the old scene, without listing the old scene itself-->
 <h1><%= @oldchunk.title%></h1>
 <% @newchunks.each do |newchunk| %>
+ <%user = User.find_by_id(newchunk.user_id) %>
+ <p><%= user.username %></p>
+ <a href="/newchunks/<%=newchunk.id%>/show">view comments</a>
  
  <p><%= newchunk.title %></p>
  <p><%= newchunk.text %></p>
