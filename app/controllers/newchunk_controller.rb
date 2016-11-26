@@ -66,11 +66,23 @@ class NewchunkController < ApplicationController
 
   get '/newchunks/:id/show' do
     @newchunk = Newchunk.find_by_id(params[:id])
-     oldchunk = Oldchunk.find_by_id(@newchunk.oldchunk_id)
-        @project = Project.find_by_id(oldchunk.project_id)
+    @oldchunk = Oldchunk.find_by_id(@newchunk.oldchunk_id)
+    @project = Project.find_by_id(@oldchunk.project_id)
+    @vote_counts = Like.group(:newchunk_id).count
     erb :'newchunks/show_newchunk'
 
   end
+  
+  post '/newchunks/comment' do
+    if params[:comment] == ""
+      redirect to "/newchunks/#{params[:id]}/show"
+    else
+      puts params
+      redirect to "/newchunks/#{params[:id]}/show"
+    end
+  
+  end
+  
 
   patch '/newchunks' do
     if params[:content] == ""

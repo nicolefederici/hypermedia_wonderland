@@ -7,12 +7,12 @@
  <%user = User.find_by_id(newchunk.user_id) %>
  <p><%= user.username %></p>
  <a href="/newchunks/<%=newchunk.id%>/show">view comments</a>
- <p> votes <%= @vote_counts[newchunk.id.to_s]%></p>
- <p><%= newchunk.title %></p>
- <p><%= newchunk.text %></p>
- <p><%= newchunk.image_link %></p>
- <p><%= newchunk.video_link %></p>
- <p><%= newchunk.sound_link %></p><br>
+ <p> votes <%= @vote_counts[@newchunk.id.to_s]%>vote total</p>
+ <p><%= newchunk.title %>title</p>
+ <p><%= newchunk.text %>text</p>
+ <p><%= newchunk.image_link %>image icon</p>
+ <p><%= newchunk.video_link %>video icon</p>
+ <p><%= newchunk.sound_link %> sound icon</p><br>
  <%if newchunk.user_id == current_user.id%>
  <div><h2><a href="/newchunks/<%=newchunk.id%>/edit">edit NEWCHUNK</a></h2></div>
  <%end%>

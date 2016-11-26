@@ -1,3 +1,5 @@
+
+<div><h2><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></h2></div>
 <h1>Individual Newchunk with all of its comments</h1>
 
 
@@ -6,30 +8,30 @@
   <p><%= @oldchunk.title %></p><br>
   <p><%= @oldchunk.text %></p><br>
 
-  <p><%= @newchunk.title %></p><br>
-  <p><%= @newchunk.text %></p><br>
-  <p><%= @newchunk.video_link %></p><br>
-  <p><%= @newchunk.image_link %></p><br>
-  <p><%= @newchunk.sound_link %></p><br>
+  <p><%= @newchunk.title %></p>title<br>
+  <p><%= @newchunk.text %></p>text with new idea<br>
+  <p><%= @newchunk.video_link %></p>video icon<br>
+  <p><%= @newchunk.image_link %></p>image icon<br>
+  <p><%= @newchunk.sound_link %>sound</p>sound<br>
+  <p> votes <%= @vote_counts[@newchunk.id.to_s]%>vote total stylized number</p>
  
 
 
-<form method="post" action="/-----------------------/<%= @newchunk.id %>/-----------">
-<input type="submit" id="submit" value="submit" class="btn btn-primary"></input>
-<input type="checkbox" id=""
-
+<form method="post" action="/newchunks/comment"><br>
+<textarea type="text" name="comment" placeholder="enter comment here"></textarea><br>
+<input type="checkbox" id="" name="vote" value="<%=@newchunk.id%>">vote</input>
+<input type="submit" id="submit" value="submit" class="btn btn-primary">
+<input type="hidden" name="id" value="<%=@newchunk.id%>">
 </form>
 
-<div><h2><a href="/<%=@project.pslug%>/index"><%=@project.pslug%></a></h2></div>
- <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
+
+ <a href='/newchunks/<%=@newchunk.id%>/edit'>EDIT</a>
+
+ <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
+<input type="hidden" name="_method" id="hidden" value="DELETE"></input><input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
+</form>
 
  <div><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>
- <input type="submit" id="submit" value="submit" class="btn btn-primary"></input>
 
-<!--I need a create button for each scene as well on this page- might put that on the right side vertical... it will use this route:/newchunks/new-->
-
- <!--I need an edit button that goes to the edit the individual new art scene page for each person's version-->
-
- <!--I need a trash button for each scene as well-->
 
  <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
