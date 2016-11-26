@@ -1,17 +1,30 @@
-<h1> All Versions of a given Scene Except the Original Source Scene</h1>
+<h1>Individual Newchunk with all of its comments</h1>
 
 
 <!--this is the code that lists all new art versions of the old scene, without listing the old scene itself-->
 
-<% @newchunks.each do |newchunk| %>
- 
- <p><%= newchunk.title %></p>
- <p><%= newchunk.text %></p>
- <p><%= newchunk.image_link %></p>
- <p><%= newchunk.video_link %></p>
- <p><%= newchunk.sound_link %></p><br>
- <% end %>
+  <p><%= @oldchunk.title %></p><br>
+  <p><%= @oldchunk.text %></p><br>
 
+  <p><%= @newchunk.title %></p><br>
+  <p><%= @newchunk.text %></p><br>
+  <p><%= @newchunk.video_link %></p><br>
+  <p><%= @newchunk.image_link %></p><br>
+  <p><%= @newchunk.sound_link %></p><br>
+ 
+
+
+<form method="post" action="/-----------------------/<%= @newchunk.id %>/-----------">
+<input type="submit" id="submit" value="submit" class="btn btn-primary"></input>
+<input type="checkbox" id=""
+
+</form>
+
+<div><h2><a href="/<%=@project.pslug%>/index"><%=@project.pslug%></a></h2></div>
+ <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
+
+ <div><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>
+ <input type="submit" id="submit" value="submit" class="btn btn-primary"></input>
 
 <!--I need a create button for each scene as well on this page- might put that on the right side vertical... it will use this route:/newchunks/new-->
 

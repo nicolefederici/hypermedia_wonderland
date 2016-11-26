@@ -64,6 +64,14 @@ class NewchunkController < ApplicationController
     erb :'newchunks/edit_newchunk'
   end
 
+  get '/newchunks/:id/show' do
+    @newchunk = Newchunk.find_by_id(params[:id])
+     oldchunk = Oldchunk.find_by_id(@newchunk.oldchunk_id)
+        @project = Project.find_by_id(oldchunk.project_id)
+    erb :'newchunks/show_newchunk'
+
+  end
+
   patch '/newchunks' do
     if params[:content] == ""
       redirect to "/newchunks/#{params[:id]}/edit"
