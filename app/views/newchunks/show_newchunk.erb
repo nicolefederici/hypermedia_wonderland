@@ -13,13 +13,15 @@
   <p><%= @newchunk.video_link %></p>video icon<br>
   <p><%= @newchunk.image_link %></p>image icon<br>
   <p><%= @newchunk.sound_link %>sound</p>sound<br>
-  <p> votes <%= @vote_counts[@newchunk.id.to_s]%></p>
+  <p> votes <%= @vote_counts[@newchunk.id]%></p>
  
 
 
 <form method="post" action="/newchunks/comment"><br>
 <textarea type="text" name="comment" placeholder="enter comment here"></textarea><br>
+<% if Like.find_by(user_id: current_user.id, newchunk_id: @newchunk.id) == nil %>
 <input type="checkbox" id="" name="vote" value="<%=@newchunk.id%>">vote</input>
+<%end%>
 <input type="submit" id="submit" value="submit" class="btn btn-primary">
 <input type="hidden" name="id" value="<%=@newchunk.id%>">
 </form>
@@ -30,6 +32,8 @@
  <p><%= comment.text %></p>
  <br>
  <%end%>
+
+
 
 
  <a href='/newchunks/<%=@newchunk.id%>/edit'>EDIT</a>

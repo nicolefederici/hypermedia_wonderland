@@ -52,7 +52,7 @@ class NewchunkController < ApplicationController
   get '/:pslug/:oslug/create' do
     @project = Project.find_by_pslug(params[:pslug])
     @oldchunks = Oldchunk.where("project_id = ?", @project.id)
-    @oldchunk = @oldchunks.first #fix this bullshit
+    @oldchunk = Oldchunk.find_by_oslug(params[:oslug])
     erb :'newchunks/create_newchunk'
   end
 
