@@ -13,7 +13,7 @@
   <p><%= @newchunk.video_link %></p>video icon<br>
   <p><%= @newchunk.image_link %></p>image icon<br>
   <p><%= @newchunk.sound_link %>sound</p>sound<br>
-  <p> votes <%= @vote_counts[@newchunk.id.to_s]%>vote total stylized number</p>
+  <p> votes <%= @vote_counts[@newchunk.id.to_s]%></p>
  
 
 
@@ -23,6 +23,13 @@
 <input type="submit" id="submit" value="submit" class="btn btn-primary">
 <input type="hidden" name="id" value="<%=@newchunk.id%>">
 </form>
+
+<% @comments.each do |comment| %>
+ <%user = User.find_by_id(comment.user_id) %>
+ <p><%= user.username %></p>
+ <p><%= comment.text %></p>
+ <br>
+ <%end%>
 
 
  <a href='/newchunks/<%=@newchunk.id%>/edit'>EDIT</a>

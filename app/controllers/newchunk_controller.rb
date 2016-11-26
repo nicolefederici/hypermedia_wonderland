@@ -69,18 +69,26 @@ class NewchunkController < ApplicationController
     @oldchunk = Oldchunk.find_by_id(@newchunk.oldchunk_id)
     @project = Project.find_by_id(@oldchunk.project_id)
     @vote_counts = Like.group(:newchunk_id).count
+    @comments = Comment.where("newchunk_id =?", @newchunk.id)
     erb :'newchunks/show_newchunk'
 
   end
   
   post '/newchunks/comment' do
-    if params[:comment] == ""
+    if params[:comment] == "" && params[:vote] == nil
       redirect to "/newchunks/#{params[:id]}/show"
     else
       puts params
+      if params[:comment] != ""
+        comment = Comment.create(text: params[:comment], newchunk_id: params[:id], user_id: current_user.id)
+        comment.save
+      end
+      if params[:vote] != nil
+        like = Like.create(user_id: current_user.id, newchunk_id: params[:id])
+        like.save 
+      end
       redirect to "/newchunks/#{params[:id]}/show"
     end
-  
   end
   
 
