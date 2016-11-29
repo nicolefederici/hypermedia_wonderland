@@ -70,6 +70,7 @@ class NewchunkController < ApplicationController
     @project = Project.find_by_id(@oldchunk.project_id)
     @vote_counts = Like.group(:newchunk_id).count
     @comments = Comment.where("newchunk_id =?", @newchunk.id)
+    @newchunk_author = User.find_by_id(@newchunk.user_id)
     erb :'newchunks/show_newchunk'
 
   end

@@ -5,6 +5,8 @@ background-color: #fefce0;
 color: #ff5d55;
 font-family: 'Audiowide', cursive;
 }
+
+
 </style>
 
 
@@ -21,11 +23,11 @@ font-family: 'Audiowide', cursive;
  <p> votes <%= @vote_counts[newchunk.id]%>vote total</p>
  <p><%= newchunk.title %>title</p>
  <p><%= newchunk.text %>text</p>
- <p><%= newchunk.image_link %>image icon</p>
- <p><%= newchunk.video_link %>video icon</p>
- <p><%= newchunk.sound_link %> sound icon</p><br>
+ <div id="camera"><p><%= newchunk.image_link %>image icon</p></div>
+ <div id="video"><p><%= newchunk.video_link %>video icon</p></div>
+ <div id="sound"><p><%= newchunk.sound_link %> sound icon</p></div><br>
  <%if newchunk.user_id == current_user.id%>
- <div><h2><a href="/newchunks/<%=newchunk.id%>/edit">edit NEWCHUNK</a></h2></div>
+ <h2><a href="/newchunks/<%=newchunk.id%>/edit">edit</a></h2>
  <%end%>
  <form method="post" action="/newchunks/<%= newchunk.id %>/delete">
 <input type="hidden" name="_method" id="hidden" value="DELETE"></input><input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>

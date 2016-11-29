@@ -1,57 +1,341 @@
-<style> 
-body{
-background-color: #fad2e0;
-color: #ff5d55;
-font-family: 'Audiowide', cursive;
+ 
+<!-- .header{
+   position: relative;
+   float: left;
+   left: 11px;
+   width: 1267px;
+   background-color: #f4f4f4
 }
+.wrapper{
+   position: relative;
+   float: left;
+   left: 11px;
+   width: 1267px;
+   background-color: #cccccc
+}
+.left1{
+   position: relative;
+   float: left;
+   left: 3px;
+   width: 98px;
+   background-color: #ccccff
+}
+.left2{
+   position: relative;
+   float: left;
+   left: 9px;
+   width: 343px;
+   background-color: #ccccff
+}
+.left3{
+   position: relative;
+   float: left;
+   left: 15px;
+   width: 623px;
+   background-color: #ccccff
+}
+.right{
+   position: relative;
+   float: right;
+   right: 3px;
+   width: 179px;
+   background-color: #ccccff
+}
+.footer{
+   position: relative;
+   float: left;
+   left: 11px;
+   width: 1267px;
+   background-color: #cfcfcf
+}
+body {
+   
+   background-color: #e7e7de
+} -->
+ <!-- -->
+
+<style> 
+
+
+body{
+    background-color: #fad2e0;
+    color: #ff5d55;
+    font-family: 'Audiowide', cursive;
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 90%;
+  }
+    
+    .header{
+     position: relative;
+     float: left;
+     left: 11px;
+     width: 1267px;
+     background-color: #white;
+     z-index: 5;
+     }
+              /*#p-title {
+              font-size: 40px;
+              position:fixed;
+              margin-left:20px;
+              margin-right:20px;
+              margin-top:0px;
+              letter-spacing: 17px;
+            }
+              #name {
+              position:relative;
+              float: left;
+            }
+*/
+    .wrapper{
+     position: relative;
+     float: left;
+     left: 11px;
+     width: 1267px;
+     background-color: orange;
+     z-index: 0;
+    }
+    
+
+    .left-side-title {
+      position: relative;
+       float: left;
+       left: 3px;
+       width: 98px;
+      background-color: #pink;
+      
+    }
+              /*#o-title {
+              font-family: 'Audiowide', cursive;
+              font-size: 30px;
+              letter-spacing: 4px;
+              left: 2080px;
+              top: 4318px;
+              width: 344px;
+              height: 67px;
+              -webkit-transform: translateY(-100%) rotate(-90deg); 
+                -moz-transform: translateY(-100%) rotate(-90deg); 
+                /*-moz-transform-origin: right top; 
+                -ms-transform: translateY(-100%) rotate(-90deg); 
+                -o-transform: translateY(-100%) rotate(-90deg); 
+                transform: translateY(-100%) rotate(-90deg);   
+                -webkit-transform-origin: left bottom;
+                -moz-transform-origin: left bottom;
+                -ms-transform-origin: left bottom;
+                -o-transform-origin: left bottom;
+                transform-origin: left bottom;
+            }
+*/
+    .second-from-left {
+      position: relative;
+       float: left;
+       left: 9px;
+       width: 343px;
+       background-color: gray;
+
+
+       /*position:fixed;
+      top:50px;
+      left:400px;
+      background-color: #fad2e0; */
+    }
+         /* #oldchunk-text {  
+          font-family: "Courier New", Courier, monospace;
+          font-size: 10px;
+          color:black;
+          left: 118px;
+          top: 60px;
+          width: 344px;
+          height: 67px;
+          overflow:scroll;
+        }
+
+            .icon-box{
+            position:fixed;
+            top:500px;
+            left:50px;
+            max-width:200px; 
+          }
+                  #video {*/
+                   /*float: left;
+                   height:40px;
+                   width:40px;
+                  }
+
+                  #image {
+                  float:left;
+                  height:40px;
+                   width:40px;
+                  }
+
+                  #sound {
+                  float:left;
+                  height:40px;
+                   width:40px;
+                  }*/
+
+
+    .third-from-left {
+      position: relative;
+      float: left;
+      left: 15px;
+      width: 623px;
+      background-color: #ccccff
+
+    }
+              /*#newchunk-text {
+              font-family: "Courier New", Courier, monospace;
+              font-size: 10px;
+              color:black;
+              left: 2080px;
+              top: 318px;
+              width: 344px;
+              height: 67px;
+              overflow:scroll;
+            }
+            
+            #comment-show {
+              border: 1px solid #ff3823;
+              background-color:#fdf4f8;
+              border-radius: 10px;
+              font-size: 120%;
+              color:black;
+              width: 677px;
+              height:225px;
+              left:2622px;
+              top:4659px;
+            }*/
+    
+
+
+    .far-right {
+      position: relative;
+       float: right;
+       right: 3px;
+       width: 179px;
+       background-color: yellow;
+     }
+
+    
+            
+            /*#side-edit{
+              font-size: 70px;
+              letter-spacing: 17px;
+              left: 3300px;
+              top: 4344px;
+              width: 220px;
+              height: 110px;
+              /*transform:rotate(-90deg);*/
+            /*}*/
+
+            
+
+            /**/
+.footer{
+   position: relative;
+   float: left;
+   left: 11px;
+   width: 1267px;
+   height: 20px;
+   background-color: #cfcfcf
+}
+           
+
+           
+   
+    
+    
+    
+
 </style>
 
 
-
-<div><h2><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></h2></div>
-<h1>Individual Newchunk with all of its comments</h1>
-
-
-<!--this is the code that lists all new art versions of the old scene, without listing the old scene itself-->
-
-  <p><%= @oldchunk.title %></p><br>
-  <p><%= @oldchunk.text %></p><br>
-
-  <p><%= @newchunk.title %></p>title<br>
-  <p><%= @newchunk.text %></p>text with new idea<br>
-  <p><%= @newchunk.video_link %></p>video icon<br>
-  <p><%= @newchunk.image_link %></p>image icon<br>
-  <p><%= @newchunk.sound_link %>sound</p>sound<br>
-  <p> votes <%= @vote_counts[@newchunk.id]%></p>
- 
-
-
-<form method="post" action="/newchunks/comment"><br>
-<textarea type="text" name="comment" placeholder="enter comment here"></textarea><br>
-<% if Like.find_by(user_id: current_user.id, newchunk_id: @newchunk.id) == nil %>
-<input type="checkbox" id="" name="vote" value="<%=@newchunk.id%>">vote</input>
-<%end%>
-<input type="submit" id="submit" value="submit" class="btn btn-primary">
-<input type="hidden" name="id" value="<%=@newchunk.id%>">
-</form>
-
-<% @comments.each do |comment| %>
- <%user = User.find_by_id(comment.user_id) %>
- <p><%= user.username %></p>
- <p><%= comment.text %></p>
- <br>
- <%end%>
+<div class="header">
+<!--       <div id="p-title"><h1><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></h1></div>
+ --></div>
 
 
 
+<div class="wrapper">
 
- <a href='/newchunks/<%=@newchunk.id%>/edit'>EDIT</a>
+<div class="left-side-title">
+        <div id="name"><%= @newchunk_author.username %></div>
+        <div id="o-title"><%= @oldchunk.title %></div> -->
+</div> 
 
- <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
-<input type="hidden" name="_method" id="hidden" value="DELETE"></input><input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
-</form>
+  
+  <div class="second-from-left">
+  
+        <div id="oldchunk-text"><%= @oldchunk.text %></div><br>
+   
+  
+    
+  
 
- <div><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>
+        <div class="icon-box">
+
+          <div id="video"><a href="<%= @newchunk.video_link %>" target="_blank"><img src="/images/video-camera.svg"></a></div><br>
+          
+          <div id="image"><a href="<%= @newchunk.image_link %>" target="_blank"><img src="/images/camera.svg"></a></div><br>
+          
+          <div id="sound"><a href="<%= @newchunk.sound_link %>" target="blank"><img src="/images/soundcloud.svg"></a></div><br>
+        
+        </div> 
+</div>
+  
+  <div class="third-from-left">
+      
+       <div class="within-newchunk-box">
+
+        <div><%= @newchunk.title %></div>
+        <div id="newchunk-text"><%= @newchunk.text %></div><br>
+        <div> votes <%= @vote_counts[@newchunk.id]%></div>
+        
+      </div>
+     
+
+        <div class="comments">
+          
+              <form method="post" action="/newchunks/comment"><br>
+              <div><textarea id="comment-show" type="text" name="comment" placeholder="enter comment here"></textarea></div>
+              <div><input type="checkbox" id="" name="vote" value="<%=@newchunk.id%>">vote</input>
+              </div>
+              <div><input type="submit" id="submit" value="submit" class="btn btn-primary">
+              <input type="hidden" name="id" value="<%=@newchunk.id%>"></div>
+              </form>
+
+                  <div class="comment-text">
+                  <% @comments.each do |comment| %>
+                  <%user = User.find_by_id(comment.user_id) %>
+                  <p><%= user.username %></p>
+                  <p><%= comment.text %></p>
+                  <br>
+                 <%end%></div>
+          
+        </div>
 
 
- <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
+
+
+           
+          <div id="delete-button">
+            <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
+            <input type="hidden" name="_method" id="hidden" value="DELETE"></input>
+            <input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
+            </form>
+        </div> 
+      
+      </div>
+  
+
+      <div class="far-right" id="side-edit"><a href='/newchunks/<%=@newchunk.id%>/edit'>EDIT</a>
+      </div>
+  </div>
+  
+  <div class="footer"><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>
+  
+
+
+
+ <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like
