@@ -7,51 +7,154 @@ color: white;
 font-family: 'Audiowide', cursive;
 
 }
-h2{
-  font-size: 120px;
-  letter-spacing: 30px;
-  left: 48px;
-  top: -20px;
-  width: 1164px;
-  height: 210px;
-}
-
-#subtitle {
-  font-size:18px;
-  letter-spacing:13px;
-  left:109px;
-  top:559px;
-  width:1087px;
-  height:111px;
-}
-
-#sign-up {
-  font-size:20px;
-  letter-spacing:10px;
-  left:300px;
-  top:719px;
-  width:330px;
-  height:55px;
 
 
-}
+  #subtitle {
+    margin-top: 40px;
+    text-align:center;
+    position:fixed;
+    font-size:18px;
+    letter-spacing:15px;
+    left:48px;
+    top:270px;
+    width:1164px;
+    height:116px;
+    color:white;
+    z-index: 6;
+  }
 
+  #sign-up {
+    font-size:20px;
+    letter-spacing:10px;
+    left:300px;
+    top:719px;
+    width:330px;
+    height:55px;
+  }
+
+
+  #try-box {
+    text-align:center;
+    position:fixed;
+    left:48px;
+    /*top:-20px;*/
+    width:1164px;
+    height:318px;
+    font-size: 120px;
+    letter-spacing: 20px;
+    font-style: italic;
+    font-weight:bold;
+  } 
+  
+  #plus-sign {
+    position:fixed;
+    left:786px;
+    top:458px;
+    width:282px;
+    height:188px;
+    transform:scale(2);
+    transform-origin:141px 94px;
+  }
+
+  #plus-sign:focus {
+    border-color: transparent;
+  }
+  
+  #name {
+    position:fixed;
+    left:244px;
+    top:445px;
+    width:858px;
+    height:34px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-style:italic;
+    border-bottom:2px solid white;
+    background-color: #ffa834;
+    color:white;
+    font-family: Audiowide;
+    border-style:none none solid none;
+  }
+  
+  #name::-webkit-input-placeholder{
+    color:white;
+  }
+
+  #name::-moz-placeholder {
+    color:white;
+  }
+
+  #name:-moz-placeholder {
+    color:white;
+  }
+  #name:-ms-input-placeholder {
+    color: white;
+  }
+
+  #password {
+    position:fixed;
+    left:244px;
+    top:490px;
+    width:858px;
+    height:34px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-style:italic;
+    border-bottom:2px solid white;
+    background-color: #ffa834;
+    color:white;
+    font-family: Audiowide;
+    border-style:none none solid none;
+  }
+  #password::-webkit-input-placeholder{
+    color:white;
+  }
+
+  #password::-moz-placeholder {
+    color:white;
+  }
+
+  #password:-moz-placeholder {
+    color:white;
+  }
+  #password:-ms-input-placeholder {
+    color: white;
+  }
+
+  #sign-up {
+    position:fixed;
+    left:980px;
+    top:583px;
+    width:378px;
+    height:63px;
+    font-size: 20px;
+    letter-spacing: 10px;
+    z-index:6;
+    font-family: Audiowide;
+    border-style:none none none none;
+    }
+
+  #sign-up a{
+    text-decoration: none;
+    color:white;
+  }
 
 </style>
 
-  <h2>Hypermedia Wonderland</h2><br>
-  <div id="subtitle"><h3> COLLABORATIVE COMPOSITION PLATFORM</H3></div>
+  <div id="try-box">hypermedia wonderland</div>
+  <div id="subtitle"> COLLABORATIVE COMPOSITION PLATFORM</div>
+  <div id="sign-up"><a href="/signup">OR SIGN-UP</a></div>
 
 
 
 
 <form method="post" action="/login">
-<input type="text" name="username" placeholder="username"><br><br><br>
+<input id="name" type="text" name="username" placeholder="username"><br><br><br>
   
-  <input type="password" name="password" placeholder="password"><br><br><br>
+  <input id="password" type="password" name="password" placeholder="password"><br><br><br>
 </input>
-<div id="sign-up"><a href="/signup">SIGN-UP</a></div>
-<input type="image" src="/images/plus.svg" color="white" width="482" height="288"></input>
+
+<input id="plus-sign" type="image" src="/images/plus.svg"></input>
 
 
 

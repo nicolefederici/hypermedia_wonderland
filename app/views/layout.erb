@@ -7,21 +7,56 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <nav>
-    <% if logged_in? %>
-     <a href="/logout"> Log Out </a>
-     <p>Welcome, <%=current_user.username %></p>
-    <%end %>
-    </nav>
+   <style>
+    #copyright {
+    font-family: Audiowide;
+    color:#ff5d55;
+    position:fixed;
+    left:223px;
+    top:623px;
+    width:392px;
+    height:29px;
+    font-size: 12px;
+    letter-spacing:6;
     
-    <div class="container">
-      <!-- <h1>Hypermedia Wonderland</h1> -->
-      <%= yield %> 
+  }
+
+    #log-out {
+    font-family: Audiowide;
+    color:white;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:392px;
+    height:29px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing:6;
+    font-style: italic;
+
+    }
+
+    #log-out a{
+      color:white;
+      text-decoration:none;
+    }
+  
+  </style>
+    <div class="container" >
+     <nav>
+      <% if logged_in? %>
+        <div id="log-out"><a href="/logout"> Log Out </a>
+        <%= current_user.username %></div>
+      <%end %>
+    </nav>
+     <div id="try-box">hypermedia wonderland</div>
       
+      <%= yield %> 
+       
       
     </div>
     
-    <div>&copy; Nicole Federici 2016</div>
+    <div id="copyright"> &copy; Nicole Federici 2016</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   

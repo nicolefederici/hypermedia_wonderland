@@ -4,28 +4,114 @@ background-color: #ffa834;
 color: white;
 font-family: 'Audiowide', cursive;
 }
+
+
+  #subtitle {
+    margin-top: 40px;
+    text-align:center;
+    position:fixed;
+    font-size:18px;
+    letter-spacing:15px;
+    left:48px;
+    top:270px;
+    width:1164px;
+    height:116px;
+    color:white;
+    z-index: 6;
+  }
+
+
+  #try-box {
+    text-align:center;
+    position:fixed;
+    left:48px;
+    /*top:-20px;*/
+    width:1164px;
+    height:318px;
+    font-size: 120px;
+    letter-spacing: 20px;
+    font-style: italic;
+    font-weight:bold;
+  } 
+
+  #plus-sign {
+    position:fixed;
+    left:786px;
+    top:458px;
+    width:282px;
+    height:188px;
+    transform:scale(2);
+    transform-origin:141px 94px;
+  }
+
+  #plus-sign:focus {
+    border-color: transparent;
+  }
+
+  .projects a {
+    text-decoration: none;
+    color:#dbf4fb;
+  }
+
+  .projects {
+    /*top:330px;
+    left:109px;*/
+    width:620px;
+    height:40px;
+    font-size: 15px;
+    font-style:italic;
+    font-family: Audiowide;
+    letter-spacing: 8px;
+    font-weight: bold;
+  }
+
+  #projects-container {
+    top: 380px;
+    left: 145px;
+    position:fixed;
+  }
+  
+  #create-project {
+    position:fixed;
+    left:786px;
+    top:400px;
+    width:282px;
+    height:188px;
+    transform:scale(1.5);
+    transform-origin:141px 94px;
+
+  }
+
+  #create-text {
+    position:fixed;
+    left:690px;
+    top:600px;
+    width:350px;
+    height:36px;
+    font-size: 25px;
+    font-family: Audiowide;
+    letter-spacing: 3px;
+    color:#dbf4fb;
+    z-index: 8;
+
+  }
+
 </style>
 
-<!--":'projects/projects_index' AND '/projects'"-->
-
-<h1>Projects Index</h1>
-
-<div>
+<div id="try-box">hypermedia wonderland</div>
+  <div id="subtitle"> COLLABORATIVE COMPOSITION PLATFORM</div>
 
 
-  <h1>Which Project?</h1>
-
-  <!--these buttons will be a series of links attached to buttons that when pushed, will take you to the index page of a particular project-->
+<!--these buttons will be a series of links attached to buttons that when pushed, will take you to the index page of a particular project-->
  
 
-  <% @projects.each do |project| %>
-    <p><a href="/<%=project.pslug%>/index"><%= project.title %></a></p>
-    <% end %>
-
-
+  <div id="projects-container"><% @projects.each do |project| %>
+    <div class="projects"><a href="/<%=project.pslug%>/index"><%= project.title %></a><br><br></div>
+    <% end %></div>
     
+    <div id="create-text">create a new project</div>
 
-    <a href='/projects/new'> Create a New Project</a>
+    <div id="create-project"><a href='/projects/new'><img src="/images/plus.svg"></a></div>
  
  
-</div>
+

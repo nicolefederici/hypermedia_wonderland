@@ -1,60 +1,6 @@
- 
-<!-- .header{
-   position: relative;
-   float: left;
-   left: 11px;
-   width: 1267px;
-   background-color: #f4f4f4
-}
-.wrapper{
-   position: relative;
-   float: left;
-   left: 11px;
-   width: 1267px;
-   background-color: #cccccc
-}
-.left1{
-   position: relative;
-   float: left;
-   left: 3px;
-   width: 98px;
-   background-color: #ccccff
-}
-.left2{
-   position: relative;
-   float: left;
-   left: 9px;
-   width: 343px;
-   background-color: #ccccff
-}
-.left3{
-   position: relative;
-   float: left;
-   left: 15px;
-   width: 623px;
-   background-color: #ccccff
-}
-.right{
-   position: relative;
-   float: right;
-   right: 3px;
-   width: 179px;
-   background-color: #ccccff
-}
-.footer{
-   position: relative;
-   float: left;
-   left: 11px;
-   width: 1267px;
-   background-color: #cfcfcf
-}
-body {
-   
-   background-color: #e7e7de
-} -->
- <!-- -->
 
-<style> 
+
+<style type="text/css"> 
 
 
 body{
@@ -66,35 +12,55 @@ body{
     margin: 0px;
     font-size: 90%;
   }
-    
-    .header{
-     position: relative;
-     float: left;
-     left: 11px;
-     width: 1267px;
-     background-color: #white;
+   a {
+    text-decoration: none;
+    } 
+    a:link {
+      color: red;
+    }
+    a:visited {
+      color: #ff0066;
+    }
+    a:hover {
+      color: black;
+    }
+
+    /*.header{
+     position: fixed;
+     top: -69px;
+     /*float: left;*/
+     /*left: 16px;
+     width: 1271px;
+     height:168;
+     background-color: white;
      z-index: 5;
      }
-              /*#p-title {
-              font-size: 40px;
-              position:fixed;
-              margin-left:20px;
-              margin-right:20px;
-              margin-top:0px;
-              letter-spacing: 17px;
+           */ #p-title {
+              top: -69px;
+     /*float: left;*/
+     left: 16px;
+     width: 1271px;
+     height:168px;
+     background-color: white;
+     z-index: 5;
             }
               #name {
               position:relative;
               float: left;
             }
-*/
+    .header::after {
+      clear:both;
+    }
+
     .wrapper{
      position: relative;
      float: left;
      left: 11px;
      width: 1267px;
+     top:100px;
      background-color: orange;
      z-index: 0;
+     min-height: 600px;
     }
     
 
@@ -103,8 +69,8 @@ body{
        float: left;
        left: 3px;
        width: 98px;
-      background-color: #pink;
-      
+      transform:rotate(-90deg);
+              z-index: 5;
     }
               /*#o-title {
               font-family: 'Audiowide', cursive;
@@ -132,48 +98,53 @@ body{
        float: left;
        left: 9px;
        width: 343px;
-       background-color: gray;
+       background-color: #fad2e0;
 
 
-       /*position:fixed;
-      top:50px;
-      left:400px;
-      background-color: #fad2e0; */
+       
     }
-         /* #oldchunk-text {  
+          #oldchunk-text {  
           font-family: "Courier New", Courier, monospace;
           font-size: 10px;
           color:black;
           left: 118px;
           top: 60px;
           width: 344px;
-          height: 67px;
+          min-height: 250px;
           overflow:scroll;
         }
 
             .icon-box{
             position:fixed;
-            top:500px;
-            left:50px;
-            max-width:200px; 
+            top:388px;
+            left:120px;
+            width:250px; 
           }
-                  #video {*/
-                   /*float: left;
+                  #video {
+                   position:relative;
+                   float: left;
+                   top:-40px;
                    height:40px;
                    width:40px;
+                   margin-right: 20px;
                   }
 
                   #image {
+                  position:relative;
+                  top:-40px;
+                  float:left;
+                  height:40px;
+                   width:40px;
+                   margin-right: 20px;
+                  }
+
+                  #sound {
+                  position:relative;
+                  top:-40px;
                   float:left;
                   height:40px;
                    width:40px;
                   }
-
-                  #sound {
-                  float:left;
-                  height:40px;
-                   width:40px;
-                  }*/
 
 
     .third-from-left {
@@ -184,7 +155,7 @@ body{
       background-color: #ccccff
 
     }
-              /*#newchunk-text {
+              #newchunk-text {
               font-family: "Courier New", Courier, monospace;
               font-size: 10px;
               color:black;
@@ -196,21 +167,21 @@ body{
             }
             
             #comment-show {
-              border: 1px solid #ff3823;
+              border: 2px solid #ff3823;
               background-color:#fdf4f8;
               border-radius: 10px;
-              font-size: 120%;
+              font-size: 100%;
               color:black;
-              width: 677px;
+              width: 600px;
               height:225px;
               left:2622px;
               top:4659px;
-            }*/
+            }
     
 
 
     .far-right {
-      position: relative;
+      position: fixed;
        float: right;
        right: 3px;
        width: 179px;
@@ -219,23 +190,24 @@ body{
 
     
             
-            /*#side-edit{
+            #side-edit{
               font-size: 70px;
               letter-spacing: 17px;
-              left: 3300px;
-              top: 4344px;
-              width: 220px;
+              
+              top: 220px;
+              
               height: 110px;
-              /*transform:rotate(-90deg);*/
-            /*}*/
+              transform:rotate(-90deg);
+              z-index: 5;
+            }
 
             
 
-            /**/
+            
 .footer{
    position: relative;
    float: left;
-   left: 11px;
+   left: 10px;
    width: 1267px;
    height: 20px;
    background-color: #cfcfcf
@@ -252,8 +224,8 @@ body{
 
 
 <div class="header">
-<!--       <div id="p-title"><h1><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></h1></div>
- --></div>
+  <div id="p-title"><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></div>
+</div>
 
 
 
@@ -298,7 +270,7 @@ body{
         <div class="comments">
           
               <form method="post" action="/newchunks/comment"><br>
-              <div><textarea id="comment-show" type="text" name="comment" placeholder="enter comment here"></textarea></div>
+              <div id="comment-show" ><textarea  type="text" name="comment" placeholder="enter comment here"></textarea></div>
               <div><input type="checkbox" id="" name="vote" value="<%=@newchunk.id%>">vote</input>
               </div>
               <div><input type="submit" id="submit" value="submit" class="btn btn-primary">

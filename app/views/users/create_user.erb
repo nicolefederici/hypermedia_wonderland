@@ -5,21 +5,207 @@ color: white;
 font-family: 'Audiowide', cursive;
 }
 
-</style><h2>Users</h2>
+#subtitle {
+    margin-top: 40px;
+    text-align:center;
+    position:fixed;
+    font-size:18px;
+    letter-spacing:15px;
+    left:48px;
+    top:270px;
+    width:1164px;
+    height:116px;
+    color:white;
+    z-index: 0;
+  }
+
+#try-box {
+    text-align:center;
+    position:fixed;
+    left:48px;
+    /*top:-20px;*/
+    width:1164px;
+    height:318px;
+    font-size: 120px;
+    letter-spacing: 20px;
+    font-style: italic;
+    font-weight:bold;
+    z-index: 3;
+  } 
+
+  #plus-sign {
+    position:fixed;
+    left:786px;
+    top:458px;
+    width:282px;
+    height:188px;
+    transform:scale(2);
+    transform-origin:141px 94px;
+    z-index:6;
+  }
+
+  #plus-sign:focus {
+    border-color: transparent;
+  }
+
+
+/*boy, is this section in need of refactoring and reducing- will get to it later*/
+  
+
+  #name {
+    position:fixed;
+    left:244px;
+    top:445px;
+    width:858px;
+    height:34px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-style:italic;
+    border-bottom:2px solid white;
+    /*background-color: #ffa834;*/
+    background-color: rgba(255, 168, 52, 0.02);
+    color:white;
+    font-family: Audiowide;
+    border-style:none none solid none;
+    z-index:8;
+    
+  }
+  
+  #name::-webkit-input-placeholder{
+    color:white;
+  }
+  
+  #name::-moz-placeholder {
+    color:white;
+  }
+
+  #name:-moz-placeholder {
+    color:white;
+  }
+  #name:-ms-input-placeholder {
+    color: white;
+  }
+
+  #email {
+    position:fixed;
+    left:244px;
+    top:490px;
+    width:858px;
+    height:34px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-style:italic;
+    border-bottom:2px solid white;
+    background-color: #ffa834;
+    color:white;
+    font-family: Audiowide;
+    border-style:none none solid none;
+  }
+
+  #email::-webkit-input-placeholder{
+    color:white;
+  }
+
+  #email::-moz-placeholder {
+    color:white;
+  }
+
+  #email:-moz-placeholder {
+    color:white;
+  }
+  #email:-ms-input-placeholder {
+    color: white;
+  }
+
+  #password {
+    position:fixed;
+    left:244px;
+    top:535px;
+    width:858px;
+    height:34px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-style:italic;
+    border-bottom:2px solid white;
+    background-color: #ffa834;
+    color:white;
+    font-family: Audiowide;
+    border-style:none none solid none;
+  }
+  
+  #password::-webkit-input-placeholder{
+    color:white;
+  }
+  
+  #password::-moz-placeholder {
+    color:white;
+  }
+
+  #password:-moz-placeholder {
+    color:white;
+  }
+  #password:-ms-input-placeholder {
+    color: white;
+  }
+  
+  #please-sign-up {
+    position:fixed;
+    left:360px;
+    top:580px;
+    width:680px;
+    height:90px;
+    font-size: 15px;
+    font-style:italic;
+    letter-spacing: 8px;
+    background-color: rgba(255, 168, 52, 0.02);
+    color:#ff3823;
+    font-family: Audiowide;
+    border-style:none none solid none;
+    z-index: 7;
+  }
+
+  #duplicate-name-error {
+    position:fixed;
+    left:240px;
+    top:400px;
+    width:680px;
+    height:20px;
+    font-size: 12px;
+    font-style:italic;
+    letter-spacing: 3px;
+    background-color: rgba(255, 168, 52, 0.02);
+    color:#ff3823;
+    font-family: Audiowide;
+    z-index: 4;
+  }
+
+  
+
+  </style>
+  
+  <div id="try-box">hypermedia wonderland</div>
+  <div id="subtitle"> COLLABORATIVE COMPOSITION PLATFORM</div>
+
+
 <% unless locals.empty? %>
-  <%= message %>
+  <div id="please-sign-up"><%= message %></div>
 <% end %>
+
 <% if session[:username_taken] == true %>
-<p>Hey, somebody already has that kick butt username. Pick your own!</p>
+  <div id="duplicate-name-error">Somebody's already grabbed that kick-butt username. Pick your own!</div>
 <% end %>
 
-
-
-<h3>Signup</h3>
+<!-- 
+<div id="sign-up">SIGN-UP</div> -->
 
 <form method="post" action="/signup">
-<input type="text" name="username" placeholder="username"><br><br><br>
-  <input type="text" name="email" placeholder="email"><br><br><br>
-  <input type="password" name="password" placeholder="password"><br><br><br>
-</input><input type="submit" id="submit" value="submit" class= "btn btn-primary"></input>
+  <input id="name" type="text" name="username" placeholder="username">
+  
+  <input id="email" type="text" name="email" placeholder="email">
+  
+  <input id="password" type="password" name="password" placeholder="password">
+  </input>
+
+<input id="plus-sign" type="image" value="submit" src="/images/plus.svg"></input>
+  
 </form>

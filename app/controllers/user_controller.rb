@@ -4,8 +4,9 @@ class UserController < ApplicationController
 
 
   get '/signup' do
+    puts "*** #{session}"
     if !logged_in?
-     erb :'users/create_user', locals: {message: 'Please sign up before you sign in'}
+     erb :'users/create_user', locals: {message: 'PLEASE SIGN-UP BEFORE YOU SIGN-IN!'}
     else
     redirect to '/projects'
     end
@@ -56,7 +57,7 @@ class UserController < ApplicationController
       session.destroy
       redirect to '/login'
     else
-      redirect to '/'
+      redirect to '/login'
     end
   end
 
