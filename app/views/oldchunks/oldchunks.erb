@@ -5,49 +5,180 @@ color: white;
 font-family: 'Audiowide', cursive;
 }
 
-#project-title{
+#try-box {
+  display: none;
+}
 
-  font-size: 20;
-  letter-spacing: 19px;
-  left: 1888px;
-  top: -2134px;
-  width: 1521px;
-  height: 84px;
+
+#hw-box {
+    text-align: center;
+    position: fixed;
+    left: 8px;
+    top: 16px;
+    width: 1272px;
+    height: 233px;
+    font-size: 64px;
+    letter-spacing: 15px;
+    font-style: italic;
+    
+  } 
+
+#hw-box a{
+  text-decoration: none;
+  color:#fb89cb;
+}
+
+#project-title {
+   font-style: italic;
+   font-weight: bold;
+    position: fixed;
+    font-size: 66px;
+    letter-spacing: 11px;
+    left: 183px;
+    top: 78px;
+    width: 931px;
+    height: 56px;
+    text-align: center;
+}
+
+
+#project-title a {
+  text-decoration: none;
+  color:white;
+}
+
+
+    
+
+#create {
+    font-style: italic;
+    position: fixed;
+    font-size: 70px;
+    letter-spacing: 3px;
+    left: -45px;
+    top: 274px;
+    width: 239px;
+    height: 179px;
+    transform: rotate(-90deg);
+
+}
+#create a {
+  text-decoration: none;
+  color:white;
+}
+
+#score {
+  font-style: italic;
+   font-weight: bold;
+    position: fixed;
+    font-size: 86px;
+    letter-spacing: 11px;
+    left: 183px;
+    top: 578px;
+    width: 200px;
+    height: 56px;
+    
+
+}
+
+#score a {
+text-decoration: none;
+color:white;
+} 
+
+.oldchunk-title {
+  font-style: italic;
+  font-weight: bold;
+    /* position: fixed; */
+    font-size: 15px;
+    letter-spacing: 2px;
+    /* left: 183px; */
+    /* top: 578px; */
+    /* width: 1000px; */
+    /* height: 15px; */
+    overflow: scroll;
+    color: red;
+    
+
+}
+
+.oldchunk-title a{
+  text-decoration: none;
+color:white;
+}
+
+.oldchunk-text {
+      font-style: italic;
+    /* font-weight: bold; */
+    /* position: fixed; */
+    font-size: 9px;
+    letter-spacing: 2px;
+    /* left: 183px; */
+    /* top: 580px; */
+    /* width: 1000px; */
+    height: 62px;
+    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    color: white;
+    margin-bottom: 10px;
+    
+
+}
+
+#box-o-scenes {
+  top: 186px;
+  left: 100px;
+  position: fixed;
+  overflow: scroll;
+  right: 100px;
+}
+
+#users {
+  font-style: italic;
+  font-weight: bold;
+    /* position: fixed; */
+    font-size: 15px;
+    letter-spacing: 2px;
+    /* left: 183px; */
+    top: 200px; 
+    /* width: 1000px; */
+    /* height: 15px; */
+    overflow: scroll;
+    color: white;
+    
+
 }
 
 </style>
 
+<!-- link back to list of projects -->
+<div id="hw-box"><a href='/projects'>hypermedia wonderland</a></div>
 
-<div id="project-title"/div><h1><a href='/projects'>HYPERMEDIA WONDERLAND</a></h1>
-<h2><%=@project.title%></h2>
+<!-- title of the project -->
+<div id="project-title"><%=@project.title%></div>
 
 <!--the title of the platform should always nav the user back to the original projects list-->
+<!--this is a link to the add an oldchunk SCENE and TITLE to the list of source scenes-->
+    <div id="create"><a href='/<%=@project.pslug%>/oldchunk/new'>create</a></div>
 
 
-
-<h3>Index</h3>
-
-<div>
-
-
-    <h4>scenes</h4>
-
-    <!--this is a link to the add an oldchunk SCENE and TITLE to the list of source scenes-->
-    <h5><a href='/<%=@project.pslug%>/oldchunk/new'>create scene</a></h5>
-
+<div id="box-o-scenes">
     <% @oldchunks.each do |oldchunk| %>
    
-   <div><h2><a href="/<%=@project.pslug%>/<%=oldchunk.oslug%>/index"><%= oldchunk.title %></a></h2></div>
-   <div><p><%= oldchunk.text %></p></div>
+   <div class="oldchunk-title"><a href="/<%=@project.pslug%>/<%=oldchunk.oslug%>/index"><%= oldchunk.title %></a></div>
+   
+   <div class="oldchunk-text"><%= oldchunk.text %></div>
    <% end %>
 
   <!--this is a list of all the current USERS on a project w link to their show page of all their contributions to this projects-->
-  <% @users.each do |user| %>
-  <h2><a href='/users/<%=user.slug%>/show'><%= user.username %></a></h2>
+  <div id="users"><% @users.each do |user| %></div>
+  <div><a href='/users/<%=user.slug%>/show'><%= user.username %></a></div>
    <% end %>
+ </div>
 
 
   <!--the word SCORE should always nav the user to the performance score of all the highest voted versions of each scene in order-->
-  <h1><a href='/<%=@project.pslug%>/final_map'>SCORE</a></h1>
+  <div id="score"><a href='/<%=@project.pslug%>/final_map'>SCORE</a></div>
 
-</div>
+

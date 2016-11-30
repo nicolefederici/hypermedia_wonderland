@@ -11,7 +11,7 @@ class OldchunkController < ApplicationController
 #whole list of scenes, that is at this route: oldchunks/oldchunks
 
   post "/oldchunks" do
-    old = Oldchunk.create(params)
+    old = Oldchunk.create(title: params[:title], text: params[:text], project_id: params[:project_id])
     old.save
     project = Project.find_by_id(old.project_id)
     redirect to "/#{project.pslug}/oldchunk/new"

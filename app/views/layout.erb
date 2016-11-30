@@ -10,14 +10,14 @@
    <style>
     #copyright {
     font-family: Audiowide;
-    color:#ff5d55;
+    color: #f1056e;
     position:fixed;
-    left:223px;
-    top:623px;
-    width:392px;
+    left:23px;
+    top:612px;
+    width:402px;
     height:29px;
     font-size: 12px;
-    letter-spacing:6;
+    letter-spacing:3px;
     
   }
 
@@ -25,13 +25,13 @@
     font-family: Audiowide;
     color:white;
     position:fixed;
-    left:0px;
-    top:0px;
+    left:27px;
+    top:12px;
     width:392px;
     height:29px;
     font-size: 12px;
     font-weight: bold;
-    letter-spacing:6;
+    letter-spacing:3px;
     font-style: italic;
 
     }
@@ -39,13 +39,16 @@
     #log-out a{
       color:white;
       text-decoration:none;
+      top:29px;
+      left:28px;
     }
+  
   
   </style>
     <div class="container" >
      <nav>
       <% if logged_in? %>
-        <div id="log-out"><a href="/logout"> Log Out </a>
+        <div id="log-out"><a href="/logout"> log-out, </a>
         <%= current_user.username %></div>
       <%end %>
     </nav>
@@ -53,11 +56,15 @@
       
       <%= yield %> 
        
-      
-    </div>
+      </div>
     
+    <!-- this is the copyright -->
     <div id="copyright"> &copy; Nicole Federici 2016</div>
+    
+
+    <!-- bootstrap/js/jquery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   
 
