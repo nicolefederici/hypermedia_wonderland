@@ -22,7 +22,7 @@ class ProjectController < ApplicationController
   end
 
   post '/projects' do
-    project = Project.create(params)
+    project = Project.create(title: params[:title])
     project.save
     redirect("#{project.pslug}/oldchunk/new")
   end
