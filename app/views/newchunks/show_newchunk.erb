@@ -19,10 +19,10 @@ body{
       color: #ff5555;
     }
     a:visited {
-      color: #b66ac7;
+      color: #ff5555;
     }
     a:hover {
-      color: black;
+      color: white;
     }
 
    
@@ -102,7 +102,7 @@ body{
     top: 119px;
     left: 1120px;
     height: 110px;
-    transform: rotate(-90deg);
+    
     z-index: 4;
     font-style: italic;
     color: white;
@@ -116,11 +116,35 @@ body{
     font-size: 100%;
     color: black;
     width: 543px;
-    height: 193px;
+    height: 138px;
     left: 601px;
     top: 337px;
     position: fixed;
+    padding:10px;
   }
+
+  #comment-show::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#d45454;
+     }
+   
+     #comment-show::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#d45454;
+     }
+   
+     #comment-show:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#d45454;
+     }
+     #comment-show:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#d45454;
+     }
     
 #o-title {
     font-size: 76px;
@@ -180,7 +204,52 @@ body{
     height: 56px;
   }  
     
+   .indi-comments {
+    border: 1px solid #ff3823;
+    background-color: rgb(253, 244, 248);
+    border-radius: 10px;
+    font-size: 100%;
+    color: black;
+    width: 543px;
+    height: 138px;
+    left: 601px;
+    margin-bottom: 5px;
+    position: fixed;
+    padding:10px;
+   } 
+
+   #newchunk-title {
+    position: fixed;
+    left: -83px;
+    font-size: 22px;
+    top: 595px;
+    letter-spacing: 5px;
+    font-style: italic;}
+
+   
+
+   #newchunk-text {
+    position: fixed;
+    left: 629px;
+    font-size: 20px;
+    top: 133px;
+    letter-spacing: 4px;
+    font-style: italic;
+    color: black;
+    font-family: "Courier New";}
+
+   
+
+   #vote-count {
+    position: fixed;
+    left: 991px;
+    font-size: 22px;
+    top: 102px;
+    letter-spacing: 1px;
+    font-style: italic;}
     
+
+   
 
 </style>
 
@@ -216,9 +285,9 @@ body{
 <!--here is the stuff within the newchunk box-
 -(votes, title, and text of new idea scene)- -->
 
-<div><%= @newchunk.title %></div>
+<div id="newchunk-title"><%= @newchunk.title %></div>
 
-<div> votes <%= @vote_counts[@newchunk.id]%></div>
+<div id="vote-count"> votes <%= @vote_counts[@newchunk.id]%></div>
 
 <div id="newchunk-text"><%= @newchunk.text %></div><br>
         
@@ -228,7 +297,7 @@ body{
 <form method="post" action="/newchunks/comment"><br>
 
 
-<div id="comment-show" ><textarea  type="text" name="comment" placeholder="enter comment here"></textarea></div>
+<textarea id="comment-show" type="text" name="comment" placeholder="enter comment here"></textarea>
               
 <div><input type="checkbox" id="vote-checkbox" name="vote" value="<%=@newchunk.id%>">vote</input></div>
               
@@ -240,8 +309,8 @@ body{
     <div class="comment-text">
         <% @comments.each do |comment| %>
         <%user = User.find_by_id(comment.user_id) %>
-        <p><%= user.username %></p>
-        <p><%= comment.text %></p><br>
+        <div class="indi-comments"><p><%= user.username %></p>
+        <p><%= comment.text %></p><br></div>
         <%end%>
 
     </div>
