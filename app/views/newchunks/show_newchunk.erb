@@ -223,91 +223,91 @@ body{
 </style>
 
 
-<div class="header">
+
   <div id="p-title"><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></div>
-</div>
 
 
 
-<div class="wrapper">
 
-<div class="left-side-title">
-        <div id="name"><%= @newchunk_author.username %></div>
-        <div id="o-title"><%= @oldchunk.title %></div> -->
-</div> 
 
-  
-  <div class="second-from-left">
-  
-        <div id="oldchunk-text"><%= @oldchunk.text %></div><br>
+<!-- AUTHOR OF THE NEWCHUNK -->
+
+<div id="name"><%= @newchunk_author.username %></div>
+
+ <!-- OLDCHUNK TITLE -->
+  <div id="o-title"><%= @oldchunk.title %></div> -->
+ 
+
+<!--OLDCHUNK TEXT
+ -->  
+<div id="oldchunk-text"><%= @oldchunk.text %></div><br>
    
-  
+<!-- THE FOUR CLICKABLE ICONS FOR THE VIDEO, PICS, SOUND, AND SCORE -->
+
+<div id="video"><a href="<%= @newchunk.video_link %>" target="_blank"><img src="/images/video-camera.svg"></a></div>
+          
+<div id="image"><a href="<%= @newchunk.image_link %>" target="_blank"><img src="/images/camera.svg"></a></div>
+          
+<div id="sound"><a href="<%= @newchunk.sound_link %>" target="blank"><img src="/images/soundcloud.svg"></a></div>
+        
+         
+<!--here is the stuff within the newchunk box-
+-(votes, title, and text of new idea scene)- -->
+
+<div><%= @newchunk.title %></div>
+
+<div> votes <%= @vote_counts[@newchunk.id]%></div>
+
+<div id="newchunk-text"><%= @newchunk.text %></div><br>
+        
+
+<!-- HERE IS WHERE USERS WILL COMMENT INTO THE FORM ABOUT A NEW IDEA OF ANOTHER USER- AND THEY WILL GET TO VOTE ON THEIR FAV. NEW VERSION  -->       
     
-  
+<form method="post" action="/newchunks/comment"><br>
 
-        <div class="icon-box">
 
-          <div id="video"><a href="<%= @newchunk.video_link %>" target="_blank"><img src="/images/video-camera.svg"></a></div><br>
-          
-          <div id="image"><a href="<%= @newchunk.image_link %>" target="_blank"><img src="/images/camera.svg"></a></div><br>
-          
-          <div id="sound"><a href="<%= @newchunk.sound_link %>" target="blank"><img src="/images/soundcloud.svg"></a></div><br>
+<div id="comment-show" ><textarea  type="text" name="comment" placeholder="enter comment here"></textarea></div>
+              
+<div><input type="checkbox" id="vote-checkbox" name="vote" value="<%=@newchunk.id%>">vote</input></div>
+              
+<div><input type="submit" id="submit" value="submit" class="btn btn-primary">
+<input type="hidden" name="id" value="<%=@newchunk.id%>"></div>
+              
+</form>
+
+    <div class="comment-text">
+        <% @comments.each do |comment| %>
+        <%user = User.find_by_id(comment.user_id) %>
+        <p><%= user.username %></p>
+        <p><%= comment.text %></p><br>
+        <%end%>
+
+    </div>
+
+<!-- DELETE BUTTON ;NEEDS ICON CLICKABLE  -->       
         
-        </div> 
-</div>
+<div id="delete-button">
   
-  <div class="third-from-left">
-      
-       <div class="within-newchunk-box">
-
-        <div><%= @newchunk.title %></div>
-        <div id="newchunk-text"><%= @newchunk.text %></div><br>
-        <div> votes <%= @vote_counts[@newchunk.id]%></div>
+  <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
+            
+  <input type="hidden" name="_method" id="hidden" value="DELETE"></input>
+  
+  <input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
+  
+  </form>
         
-      </div>
-     
-
-        <div class="comments">
-          
-              <form method="post" action="/newchunks/comment"><br>
-              <div id="comment-show" ><textarea  type="text" name="comment" placeholder="enter comment here"></textarea></div>
-              <div><input type="checkbox" id="" name="vote" value="<%=@newchunk.id%>">vote</input>
-              </div>
-              <div><input type="submit" id="submit" value="submit" class="btn btn-primary">
-              <input type="hidden" name="id" value="<%=@newchunk.id%>"></div>
-              </form>
-
-                  <div class="comment-text">
-                  <% @comments.each do |comment| %>
-                  <%user = User.find_by_id(comment.user_id) %>
-                  <p><%= user.username %></p>
-                  <p><%= comment.text %></p>
-                  <br>
-                 <%end%></div>
-          
-        </div>
-
-
-
-
-           
-          <div id="delete-button">
-            <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
-            <input type="hidden" name="_method" id="hidden" value="DELETE"></input>
-            <input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
-            </form>
-        </div> 
+  </div> 
       
-      </div>
+  <!-- THE EDIT THE NEWCHUNK THINGY ON THE SIDE OF IT -->
   
-
-      <div class="far-right" id="side-edit"><a href='/newchunks/<%=@newchunk.id%>/edit'>EDIT</a>
-      </div>
+  </div>
+  <div class="far-right" id="side-edit"><a href='/newchunks/<%=@newchunk.id%>/edit'>EDIT</a>
   </div>
   
+  <!-- "SCORE" CHECK OTHER WRITTEN CODE IN OLDCHUNKS/OLDCHUNKS -->
   <div class="footer"><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>
   
 
 
 
- <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like
+ 

@@ -11,21 +11,21 @@ font-family: 'Audiowide', cursive;
 
 
 #hw-box {
-    text-align: center;
+        text-align: center;
     position: fixed;
     left: 8px;
-    top: 16px;
+    top: -114px;
     width: 1272px;
     height: 233px;
-    font-size: 64px;
+    font-size: 338px;
     letter-spacing: 15px;
     font-style: italic;
-    
+    z-index: 0;
   } 
 
 #hw-box a{
   text-decoration: none;
-  color:#fb89cb;
+  color: rgba(251, 137, 203, 0.69)
 }
 
 #project-title {
@@ -132,6 +132,7 @@ color:white;
   position: fixed;
   overflow: scroll;
   right: 100px;
+  bottom: 180px;
 }
 
 #users {
@@ -162,6 +163,12 @@ color:white;
 <!--this is a link to the add an oldchunk SCENE and TITLE to the list of source scenes-->
     <div id="create"><a href='/<%=@project.pslug%>/oldchunk/new'>create</a></div>
 
+<!--this is a list of all the current USERS on a project w link to their show page of all their contributions to this projects-->
+  <div id="users"><% @users.each do |user| %></div>
+  <div><a href='/users/<%=user.slug%>/show'><%= user.username %></a></div>
+   <% end %>
+ </div>
+
 
 <div id="box-o-scenes">
     <% @oldchunks.each do |oldchunk| %>
@@ -170,13 +177,8 @@ color:white;
    
    <div class="oldchunk-text"><%= oldchunk.text %></div>
    <% end %>
-
-  <!--this is a list of all the current USERS on a project w link to their show page of all their contributions to this projects-->
-  <div id="users"><% @users.each do |user| %></div>
-  <div><a href='/users/<%=user.slug%>/show'><%= user.username %></a></div>
-   <% end %>
- </div>
-
+</div>
+  
 
   <!--the word SCORE should always nav the user to the performance score of all the highest voted versions of each scene in order-->
   <div id="score"><a href='/<%=@project.pslug%>/final_map'>SCORE</a></div>
