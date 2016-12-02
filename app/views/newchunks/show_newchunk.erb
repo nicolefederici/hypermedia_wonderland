@@ -42,13 +42,13 @@ body{
 
 #name {
         position: fixed;
-    left: -63px;
-    font-size: 22px;
+    left: -17px;
+    font-size: 20px;
     transform: rotate(-90deg);
-    top: 595px;
-    letter-spacing: 5px;
-    font-style: italic;}
-    
+    top: 217px;
+    letter-spacing: 6px;
+    font-style: italic;
+}
    /* .header::after {
       clear:both;
     }*/
@@ -68,32 +68,33 @@ body{
     overflow: scroll;
     position: fixed;
     right: 743px;
+    max-height: 275px;
   }
   
    
 
 #video {
     position: fixed;
-    top: 418px;
+    top: 453px;
     height: 48px;
-    width: 40px;
-    left: 410px;
+    width: 51px;
+    left: 339px;
   }
 
   #image {
     position: fixed;
-    top: 418px;
+    top: 453px;
     height: 48px;
-    width: 40px;
-    left: 324px;
+    width: 51px;
+    left: 236px;
   }
 
   #sound {
   position: fixed;
-    top: 422px;
+    top: 456px;
     height: 48px;
-    width: 40px;
-    left: 247px;
+    width: 61px;
+    left: 136px;
   }
 
   #newchunk-text {
@@ -120,43 +121,44 @@ body{
     left: 601px;
     top: 337px;
     position: fixed;
-    padding:10px;
+    padding: 10px;
+    letter-spacing: 7px;
   }
 
   #comment-show::-webkit-input-placeholder{
        font-family:Audiowide;
        font-style: italic;
-       color:#d45454;
+       color:#ff3823;
      }
    
      #comment-show::-moz-placeholder {
        font-family:Audiowide;
        font-style: italic;
-       color:#d45454;
+       color:#ff3823;
      }
    
      #comment-show:-moz-placeholder {
        font-family:Audiowide;
        font-style: italic;
-       color:#d45454;
+       color:#ff3823;
      }
      #comment-show:-ms-input-placeholder {
        font-family:Audiowide;
        font-style: italic;
-       color:#d45454;
+       color:#ff3823;
      }
     
 #o-title {
-    font-size: 76px;
+        font-size: 25px;
     color: rgba(255, 85, 85, 0.74);
-    width: 150px;
-    height: 146px;
-    left: -15px;
-    top: 347px;
+    width: 204px;
+    height: 141px;
+    left: 550px;
+    top: 94px;
     position: fixed;
     font-style: italic;
-    transform: rotate(-90deg);
-  }
+    /* transform: rotate(-90deg); */}
+
    #side-edit{
       font-size: 45px;
     letter-spacing: 17px;
@@ -218,26 +220,39 @@ body{
     padding:10px;
    } 
 
-   #newchunk-title {
+   /*#newchunk-title {
     position: fixed;
     left: -83px;
     font-size: 22px;
     top: 595px;
     letter-spacing: 5px;
-    font-style: italic;}
+    font-style: italic;}*/
+
+   #newchunk-title {position: fixed;
+    left: -234px;
+    font-size: 61px;
+    top: 275px;
+    letter-spacing: 5px;
+    font-style: italic;
+    transform: rotate(-90deg);
+}
 
    
 
    #newchunk-text {
+    
     position: fixed;
-    left: 629px;
-    font-size: 20px;
+    left: 555px;
+    /*max-: 85px;*/
+    font-size: 13px;
     top: 133px;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     font-style: italic;
     color: black;
-    font-family: "Courier New";}
-
+    font-family: "Courier New";
+    overflow: scroll;
+    max-width: 605px;
+    min-height: 165px;}
    
 
    #vote-count {
@@ -248,8 +263,62 @@ body{
     letter-spacing: 1px;
     font-style: italic;}
     
+  #vote-checkbox {
+    position: fixed;
+    left: 944px;
+    font-size: 13px;
+    top: 312px;
+    letter-spacing: 6px;
+    font-style: italic;
 
+  }
    
+   #submit {
+    position: fixed;
+    left: 1124px;
+    font-size: 22px;
+    top: 411px;
+    
+
+   }
+
+   #delete-button {
+    position: fixed;
+    left: 1024px;
+    font-size: 22px;
+    top: 411px;
+    
+   }
+
+   #plus-show {
+    position: fixed;
+    left: 770px;
+    top: 423px;
+    width: 192px;
+    height: 147px;
+    transform: scale(1);
+    transform-origin: 137px 94px;
+    color: red;
+}
+
+#scroll-box{
+  top:546px;
+  min-height:300px;
+  overflow:scroll;
+  overflow-x:scroll;
+  overflow-y:scroll;
+}
+
+#trash-can {
+      position: fixed;
+    left: 999px;
+    top: 456px;
+    width: 278px;
+    height: 26px;
+    transform: scale(1);
+    transform-origin: 137px 94px;
+    color: red;
+}
 
 </style>
 
@@ -266,7 +335,7 @@ body{
 <div id="name"><%= @newchunk_author.username %></div>
 
  <!-- OLDCHUNK TITLE -->
-  <div id="o-title"><%= @oldchunk.title %></div> -->
+  <div id="o-title"><%= @oldchunk.title %></div> 
  
 
 <!--OLDCHUNK TEXT
@@ -294,14 +363,18 @@ body{
 
 <!-- HERE IS WHERE USERS WILL COMMENT INTO THE FORM ABOUT A NEW IDEA OF ANOTHER USER- AND THEY WILL GET TO VOTE ON THEIR FAV. NEW VERSION  -->       
     
-<form method="post" action="/newchunks/comment"><br>
+<div id="scroll-box">
+  <form method="post" action="/newchunks/comment"><br>
 
 
 <textarea id="comment-show" type="text" name="comment" placeholder="enter comment here"></textarea>
               
-<div><input type="checkbox" id="vote-checkbox" name="vote" value="<%=@newchunk.id%>">vote</input></div>
+<div id="vote-checkbox">use your vote?<input type="checkbox" name="vote" value="<%=@newchunk.id%>"></input></div>
               
-<div><input type="submit" id="submit" value="submit" class="btn btn-primary">
+<!-- <div><input type="submit" id="submit" value="submit" class="btn btn-primary"> -->
+<input type="image" id="plus-show" src="/images/plus-red.svg">
+
+
 <input type="hidden" name="id" value="<%=@newchunk.id%>"></div>
               
 </form>
@@ -320,10 +393,11 @@ body{
 <div id="delete-button">
   
   <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
+
             
   <input type="hidden" name="_method" id="hidden" value="DELETE"></input>
   
-  <input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
+  <input type="image" id="trash-can" src="/images/trash-red.svg"></input>
   
   </form>
         
@@ -332,6 +406,7 @@ body{
   <!-- THE EDIT THE NEWCHUNK THINGY ON THE SIDE OF IT -->
   
   </div>
+</div>
   
   <div id="side-edit"><a href='/newchunks/<%=@newchunk.id%>/edit'>EDIT</a>
   </div>
