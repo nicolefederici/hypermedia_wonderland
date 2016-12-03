@@ -6,9 +6,9 @@ color: #ff5d55;
 font-family: 'Audiowide', cursive;
 }
 
-#p-title-n {
+  #p-title-n {
   
-    top: -46px;
+    top: -18px;
     position: fixed;
     /* float: left; */
     left: 89px;
@@ -18,81 +18,110 @@ font-family: 'Audiowide', cursive;
     font-size: 122px;
     letter-spacing: 0px;
     font-style: italic;
-    color: red;}
-
-    #video-n {
-    position: fixed;
-    top: 453px;
-    height: 48px;
-    width: 51px;
-    left: 339px;
+    color: red;
   }
 
-  #image-n {
+
+    #side-title-n {
+   font-size: 62px;
+    letter-spacing: 14px;
+    top: 203px;
+    left: -130px;
+    height: 110px;
+    transform: rotate(-90deg);
+    z-index: 4;
+    font-style: italic;
+    color: red;
     position: fixed;
+    }
+
+    #video-n {
+    position: absolute;
+    top: 453px;
+    height: 49px;
+    width: 51px;
+    left: 244px;
+    }
+
+  #image-n {
+    position: absolute;
     top: 453px;
     height: 48px;
     width: 51px;
-    left: 236px;
+    left: 340px;
   }
 
    #sound-n {
-  position: fixed;
-    top: 456px;
+  position: absolute;
+   top: 456px;
     height: 48px;
     width: 61px;
     left: 136px;
   }
 
-#comment {
+.view-comments {
+   
     border: 1px solid #ff3823;
     background-color: rgb(253, 244, 248);
     border-radius: 10px;
-    font-size: 100%;
     color: black;
-    width: 543px;
+    width: 943px;
     height: 138px;
-    left: 601px;
-    top: 337px;
-    position: fixed;
+    left: 131px;
+    top: 141px;
+    position: absolute;
     padding: 10px;
-    letter-spacing: 7px;
-  }
+    padding-left: 130px;
+    font-size: 15px;
+    padding-top: 110px;
+    letter-spacing: 1px;
+    font-style: italic;
+    }
 
-  #comment-n::-webkit-input-placeholder{
+      .view-comments::-webkit-input-placeholder{
        font-family:Audiowide;
        font-style: italic;
        color:#ff3823;
      }
    
-     #comment-n::-moz-placeholder {
+     .view-comments::-moz-placeholder {
        font-family:Audiowide;
        font-style: italic;
        color:#ff3823;
      }
    
-     #comment-n:-moz-placeholder {
+     .view-comments:-moz-placeholder {
        font-family:Audiowide;
        font-style: italic;
        color:#ff3823;
      }
-     #comment-n:-ms-input-placeholder {
+     .view-comments:-ms-input-placeholder {
        font-family:Audiowide;
        font-style: italic;
        color:#ff3823;
      }
+
+     .view-comments a{
+
+    text-decoration: none;
+    } 
+    a:link {
+      color: #ff5555;
+    }
+    a:visited {
+      color: #ff5555;
+    }
+    a:hover {
+      color: white;
+    }
 
      #edit-n{
     font-size: 45px;
     letter-spacing: 17px;
-    top: 119px;
-    left: 1120px;
-    height: 110px;
-    
     z-index: 4;
     font-style: italic;
     color: white;
-    position: fixed;
+    position: absolute;
     }
 
     #edit-n a{
@@ -101,16 +130,17 @@ font-family: 'Audiowide', cursive;
     }
 
     #side-create-n{
-    font-size: 45px;
-    letter-spacing: 17px;
-    top: 119px;
-    left: 1120px;
+    font-size: 22px;
+    letter-spacing: 8px;
+    top: 215px;
+    left: 951px;
     height: 110px;
     transform: rotate(-90deg);
-    z-index: 4;
+    /* z-index: 4; */
     font-style: italic;
     color: white;
-    position: fixed;
+    position: absolute;
+    height:30px;
     }
 
     #side-create-n a{
@@ -122,18 +152,125 @@ font-family: 'Audiowide', cursive;
     font-style: italic;
     font-weight: bold;
     position: fixed;
-    font-size: 86px;
+    font-size: 103px;
     letter-spacing: 11px;
-    left: 183px;
-    top: 578px;
-    width: 200px;
-    height: 56px;}
+    left: 209px;
+    top: 548px;
+    width: 183px;
+    height: 56px;
+    }
 
     #score-n a{
       text-decoration: none;
       color:#ff5d55;
     }
     
+    .user-n {
+        
+    font-size: 15px;
+    /* top: 102px; */
+    
+    letter-spacing: 1px;
+    font-style: italic;
+    width: 30px;
+    padding-top: 0px;
+    padding-left: 0px;
+    position:absolute;
+    }
+
+    .user-n a {
+      text-decoration: none;
+      color:red;
+
+    }
+
+    .votes-total-n {
+    position: absolute;
+    left: 991px;
+    font-size: 22px;
+    top: 102px;
+    letter-spacing: 1px;
+    font-style: italic;
+  }
+    
+
+    
+
+    .title-n {
+    position: absolute;
+    padding-left: 791px;
+    font-size: 22px;
+    top: 102px;
+    letter-spacing: 1px;
+    font-style: italic;
+    width:800px;
+
+    }
+
+    .text-n {
+
+    position: absolute; 
+    padding-left: 208px;
+    font-size: 12px;
+    padding-top: 24px;
+    letter-spacing: 1px;
+    font-style: italic;
+    font-family: "Courier New";
+  }
+
+   .edit-big {
+    top: 119px;
+    left: 1120px;
+    height: 110px;
+    }
+
+
+    
+    #p-title-n a {
+
+    text-decoration: none;
+    } 
+    a:link {
+      color: #ff5555;
+    }
+    a:visited {
+      color: #ff5555;
+    }
+    a:hover {
+      color: white;
+    }
+
+
+
+    
+
+.big-wrapper {
+    top: 200px;
+    position: fixed;
+    overflow: scroll;
+    width: 1100px;
+    left: 100px;
+    overflow: scroll;
+
+}
+
+.icons {
+
+}
+
+.delete-button-n{
+  position:absolute;
+  
+} 
+.trash-can-n {
+  position: relative;
+    width: 38px;
+    
+    left: 919px;
+    top: 10px;
+    height:100px;
+
+} 
 
 </style>
 
@@ -143,45 +280,65 @@ font-family: 'Audiowide', cursive;
 
 
 <!--this is the code that lists all new art versions of the old scene, without listing the old scene itself-->
-<div><%= @oldchunk.title%></div>
-<% @newchunks.each do |newchunk| %>
- <%user = User.find_by_id(newchunk.user_id) %>
- <div><%= user.username %></div>
- <a href="/newchunks/<%=newchunk.id%>/show">view comments</a>
- <p> votes <%= @vote_counts[newchunk.id]%>vote total</p>
- <p><%= newchunk.title %>title</p>
- <p><%= newchunk.text %>text</p>
- 
 
- <div id="video-n"><a href="<%= newchunk.video_link %>" target="_blank"><img src="/images/video-camera.svg"></a></div>
-          
-<div id="image-n"><a href="<%= newchunk.image_link %>" target="_blank"><img src="/images/camera.svg"></a></div>
-          
-<div id="sound-n"><a href="<%= newchunk.sound_link %>" target="blank"><img src="/images/soundcloud.svg"></a></div>
- 
- <%if newchunk.user_id == current_user.id%>
- 
- <div id="edit-n"><a href="/newchunks/<%=newchunk.id%>/edit">edit</a></div>
- <%end%>
- 
+<!-- <div class="wrapper" -->
+<!-- indi --><div id="p-title-n"><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></div>
 
-<form method="post" action="/newchunks/<%= newchunk.id %>/delete">
-<input type="hidden" name="_method" id="hidden" value="DELETE"></input>
 
-<input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
-</form>
+<!-- indi --><div id="side-title-n"><%= @oldchunk.title%></div>
+
+<div class="big-wrapper">
+    
+    <% @newchunks.each do |newchunk| %>
+    <%user = User.find_by_id(newchunk.user_id) %>
+ 
+  <!-- author --><div class="user-n"><%= user.username %></div>
+  <!-- title --><div class="title-n"><%= newchunk.title %></div>
+  <!-- newchunks-n link --><div class="view-comments"><a href="/newchunks/<%=newchunk.id%>/show">view comments</a></div>
+  <!-- vote toal --><div class="votes-total-n"><%= @vote_counts[newchunk.id]%>votes</div>
+
+
+ 
+ <div class="text-n"><%= newchunk.text %>text</div>
+
+  <div class="icons">
+    <div id="video-n"><a href="<%= newchunk.video_link %>" target="_blank"><img src="/images/video-camera.svg"></a></div>
+    <div id="image-n"><a href="<%= newchunk.image_link %>" target="_blank"><img src="/images/camera.svg"></a></div>
+    <div id="sound-n"><a href="<%= newchunk.sound_link %>" target="blank"><img src="/images/soundcloud.svg"></a></div>
+  </div>
+ 
+    <div class="edit-big"><%if newchunk.user_id == current_user.id%>
+    <div id="edit-n"><a href="/newchunks/<%=newchunk.id%>/edit">edit</a></div>
+    <%end%>
+    </div>
+
+<div id="delete-button-n">
+  
+  <form method="post" action="/newchunks/<%= newchunk.id %>/delete">
+
+            
+  <input type="hidden" name="_method" class="hidden" value="DELETE"></input>
+  
+  <input type="image" class="trash-can-n" src="/images/trash-red.svg"></input>
+  
+  </form>
+        
+  </div> 
 
 
  <% end %>
 
+</div>
 
-<!--I need a create button for each scene as well on this page- might put that on the right side vertical... it will use this route:/newchunks/new-->
+
+ 
+  <!--I need a create button for each newchunk-use this route:/newchunks/new-->
+
 <div id="side-create-n"><a href="/<%=@project.pslug%>/<%=@oldchunk.oslug%>/create">CREATE</a></div>
    
- <!--I need an edit button that goes to the edit the individual new art scene page for each person's version-->
+ 
 
- <!--I need a trash button for each scene as well-->
 
  <div id="score-n"><a href="/<%=@project.pslug%>/final_map">SCORE</a></div>
 
- <div><h2><a href="/<%=@project.pslug%>/index"><%=@project.title%> Oldchunk Index </a></h2></div>
+ 
