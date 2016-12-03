@@ -5,6 +5,9 @@ background-color: #fefce0;
 color: #ff5d55;
 font-family: 'Audiowide', cursive;
 }
+#try-box {
+  display:none;
+}
 
   #p-title-n {
   
@@ -23,21 +26,20 @@ font-family: 'Audiowide', cursive;
 
 
     #side-title-n {
-   font-size: 62px;
-    letter-spacing: 14px;
-    top: 203px;
-    left: -130px;
+    font-size: 62px;
+    letter-spacing: 13px;
+    top: 291px;
+    left: -251px;
     height: 110px;
     transform: rotate(-90deg);
     z-index: 4;
     font-style: italic;
-    color: red;
-    position: fixed;
-    }
+    color: #ff5d55;
+    position: fixed;}
 
     #video-n {
     position: absolute;
-    top: 453px;
+    top: 187px;
     height: 49px;
     width: 51px;
     left: 244px;
@@ -45,7 +47,7 @@ font-family: 'Audiowide', cursive;
 
   #image-n {
     position: absolute;
-    top: 453px;
+    top: 187px;
     height: 48px;
     width: 51px;
     left: 340px;
@@ -53,55 +55,56 @@ font-family: 'Audiowide', cursive;
 
    #sound-n {
   position: absolute;
-   top: 456px;
+   top: 187px;
     height: 48px;
     width: 61px;
     left: 136px;
   }
 
-.view-comments {
+.pink-box {
    
     border: 1px solid #ff3823;
     background-color: rgb(253, 244, 248);
-    border-radius: 10px;
+    border-radius: 35px;
     color: black;
-    width: 943px;
-    height: 138px;
-    left: 131px;
-    top: 141px;
-    position: absolute;
+    width: 887px;
+    height: 155px;
+    left: 57px;
+    top: 0px;
+    position: relative;
     padding: 10px;
-    padding-left: 130px;
+    padding-left: 10px;
     font-size: 15px;
-    padding-top: 110px;
+    padding-top: 10px;
     letter-spacing: 1px;
     font-style: italic;
+    margin-bottom: -13px;
     }
 
-      .view-comments::-webkit-input-placeholder{
+      .pink-box::-webkit-input-placeholder{
        font-family:Audiowide;
        font-style: italic;
        color:#ff3823;
      }
    
-     .view-comments::-moz-placeholder {
+     .pink-box::-moz-placeholder {
        font-family:Audiowide;
        font-style: italic;
        color:#ff3823;
      }
    
-     .view-comments:-moz-placeholder {
+     .pink-box:-moz-placeholder {
        font-family:Audiowide;
        font-style: italic;
        color:#ff3823;
      }
-     .view-comments:-ms-input-placeholder {
+     .pink-box:-ms-input-placeholder {
        font-family:Audiowide;
        font-style: italic;
        color:#ff3823;
      }
 
-     .view-comments a{
+     .pink-box a{
 
     text-decoration: none;
     } 
@@ -115,32 +118,36 @@ font-family: 'Audiowide', cursive;
       color: white;
     }
 
-     #edit-n{
-    font-size: 45px;
-    letter-spacing: 17px;
-    z-index: 4;
+     .edit-n{
+    font-size: 25px;
+    letter-spacing: 16px;
     font-style: italic;
     color: white;
     position: absolute;
+    left: 781px;
+    top: 188px;
     }
 
-    #edit-n a{
+
+    .edit-n a{
       text-decoration: none;
       color:#ff5d55;
     }
-
+    .edit-n a{
+        color: #ff55b0;
+}
     #side-create-n{
-    font-size: 22px;
+        font-size: 37px;
     letter-spacing: 8px;
-    top: 215px;
-    left: 951px;
+    top: 245px;
+    left: 1055px;
     height: 110px;
     transform: rotate(-90deg);
     /* z-index: 4; */
     font-style: italic;
     color: white;
-    position: absolute;
-    height:30px;
+    position: fixed;
+    height: 30px;
     }
 
     #side-create-n a{
@@ -168,14 +175,14 @@ font-family: 'Audiowide', cursive;
     .user-n {
         
     font-size: 15px;
-    /* top: 102px; */
-    
+    top: -22px;
     letter-spacing: 1px;
     font-style: italic;
     width: 30px;
     padding-top: 0px;
-    padding-left: 0px;
-    position:absolute;
+    padding-left: 11px;
+    position: absolute;
+    left: 70px;
     }
 
     .user-n a {
@@ -186,9 +193,9 @@ font-family: 'Audiowide', cursive;
 
     .votes-total-n {
     position: absolute;
-    left: 991px;
+    left: 748px;
     font-size: 22px;
-    top: 102px;
+    top: -30px;
     letter-spacing: 1px;
     font-style: italic;
   }
@@ -196,33 +203,31 @@ font-family: 'Audiowide', cursive;
 
     
 
-    .title-n {
-    position: absolute;
-    padding-left: 791px;
-    font-size: 22px;
-    top: 102px;
-    letter-spacing: 1px;
-    font-style: italic;
-    width:800px;
-
-    }
+    
 
     .text-n {
 
-    position: absolute; 
-    padding-left: 208px;
+    position: absolute;
+    padding-left: 86px;
     font-size: 12px;
-    padding-top: 24px;
+    padding-top: 11px;
+    padding-bottom: 11px;
     letter-spacing: 1px;
     font-style: italic;
     font-family: "Courier New";
+    top: 0px;
+    overflow: scroll;
+    max-height: 74%;
+    max-width: 850px;
+
   }
 
-   .edit-big {
+   /*.edit-big {
     top: 119px;
     left: 1120px;
     height: 110px;
-    }
+    position:relative;
+    }*/
 
 
     
@@ -245,33 +250,67 @@ font-family: 'Audiowide', cursive;
     
 
 .big-wrapper {
-    top: 200px;
+    top: 139px;
     position: fixed;
     overflow: scroll;
     width: 1100px;
     left: 100px;
     overflow: scroll;
-
+    padding-top: 26px;
+    height:400px;
 }
 
-.icons {
 
-}
 
 .delete-button-n{
   position:absolute;
   
 } 
 .trash-can-n {
-  position: relative;
+    position: absolute;
     width: 38px;
-    
-    left: 919px;
-    top: 10px;
-    height:100px;
+    left: 909px;
+    top: 155px;
+    height: 100px;
 
 } 
+.little-wrapper {
+  position:relative;
+  margin:0 auto 120px;
+}
 
+.view-comments-n {
+    position: absolute;
+    width: 193px;
+    left: 509px;
+    top: -22px;
+    height: 100px;
+    font-style: italic;
+
+}
+
+.view-comments-n a {
+  text-decoration: none;
+  color:#ff5d55;
+}
+
+#new-box {
+  position:fixed;
+  left:10px;
+  top:20px;
+}
+.title-n {
+  position: absolute;
+    padding-left: 13px;
+    font-size: 22px;
+    top: -28px;
+    letter-spacing: 1px;
+    font-style: italic;
+    width: 800px;
+    left: 239px;
+    width: 145px;
+
+}
 </style>
 
 
@@ -284,18 +323,26 @@ font-family: 'Audiowide', cursive;
 <!-- <div class="wrapper" -->
 <!-- indi --><div id="p-title-n"><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></div>
 
-
-<!-- indi --><div id="side-title-n"><%= @oldchunk.title%></div>
+<!-- indi --><div id="side-title-n">ALL <%= @oldchunk.title%></div>
 
 <div class="big-wrapper">
     
     <% @newchunks.each do |newchunk| %>
     <%user = User.find_by_id(newchunk.user_id) %>
  
+  <div class="little-wrapper">
   <!-- author --><div class="user-n"><%= user.username %></div>
   <!-- title --><div class="title-n"><%= newchunk.title %></div>
-  <!-- newchunks-n link --><div class="view-comments"><a href="/newchunks/<%=newchunk.id%>/show">view comments</a></div>
-  <!-- vote toal --><div class="votes-total-n"><%= @vote_counts[newchunk.id]%>votes</div>
+  <div class="view-comments-n"><a href="/newchunks/<%=newchunk.id%>/show">view comments</a></div>
+  <!-- newchunks-n link --><div class="pink-box"></div>
+  <!-- vote toal --><div class="votes-total-n"><%= @vote_counts[newchunk.id]%>
+  <% if @vote_counts[newchunk.id] == 1%>
+  vote
+  <%elsif @vote_counts[newchunk.id] == nil%>
+  no votes yet
+  <%else%>
+  votes
+<%end%></div>
 
 
  
@@ -307,10 +354,10 @@ font-family: 'Audiowide', cursive;
     <div id="sound-n"><a href="<%= newchunk.sound_link %>" target="blank"><img src="/images/soundcloud.svg"></a></div>
   </div>
  
-    <div class="edit-big"><%if newchunk.user_id == current_user.id%>
-    <div id="edit-n"><a href="/newchunks/<%=newchunk.id%>/edit">edit</a></div>
+    <%if newchunk.user_id == current_user.id%>
+    <div class="edit-n"><a href="/newchunks/<%=newchunk.id%>/edit">edit</a></div>
     <%end%>
-    </div>
+    
 
 <div id="delete-button-n">
   
@@ -324,7 +371,7 @@ font-family: 'Audiowide', cursive;
   </form>
         
   </div> 
-
+</div>
 
  <% end %>
 
