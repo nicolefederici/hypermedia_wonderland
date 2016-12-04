@@ -164,9 +164,9 @@ body{
 
     .text-edit {
     position: fixed;
-    font-size: 12px;
+    /*font-size: 12px;
     letter-spacing: 1px;
-    font-family: "Courier New";
+    font-family: "Courier New";*/
     top: 248px;
     overflow: scroll;
     left: 350;
@@ -174,6 +174,9 @@ body{
 }
 
 .text-edit textarea {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family: "Courier New";
     width: 532px;
     height: 245px;
     color: black;
@@ -182,25 +185,29 @@ body{
 }
 
  .text-edit textarea::-webkit-input-placeholder{
-       font-family:Audiowide;
-       font-style: italic;
+       font-size: 12px;
+    letter-spacing: 1px;
+    font-family: "Courier New";
        color:#ff3823;
      }
    
      .text-edit textarea::-moz-placeholder {
-       font-family:Audiowide;
-       font-style: italic;
+       font-size: 12px;
+    letter-spacing: 1px;
+    font-family: "Courier New";
        color:#ff3823;
      }
    
      .text-edit textarea:-moz-placeholder {
-       font-family:Audiowide;
-       font-style: italic;
+       font-size: 12px;
+    letter-spacing: 1px;
+    font-family: "Courier New";
        color:#ff3823;
      }
      .text-edit textarea:-ms-input-placeholder {
-       font-family:Audiowide;
-       font-style: italic;
+       font-size: 12px;
+    letter-spacing: 1px;
+    font-family: "Courier New";
        color:#ff3823;
      }
 
@@ -220,6 +227,9 @@ body{
     border-right: hidden;
     border-width: 1px;
     width:331px;
+    font-family: Audiowide;
+    font-size: 18px;
+    color: #ff3823;
   }
 
    .vid input::-webkit-input-placeholder{
@@ -260,6 +270,11 @@ body{
     border-right: hidden;
     border-width: 1px;
     width:331px;
+
+    font-family: Audiowide;
+    font-size: 18px;
+    color: #ff3823;
+">
     }
      .pics input::-webkit-input-placeholder{
        font-family:Audiowide;
@@ -303,6 +318,9 @@ body{
     border-right: hidden;
     border-width: 1px;
     width:331px;
+    font-family: Audiowide;
+    font-size: 18px;
+    color: #ff3823;
  }
 
  .sound input::-webkit-input-placeholder{
@@ -358,6 +376,25 @@ body{
     color: red;
 }
 
+.p-title-edit {
+   position: fixed;
+    left: -151px;
+    top: 264px;
+    width: 399px;
+    height: 61px;
+    transform: rotate(-90deg);
+    font-size: 40px;
+    font-style: italic;
+    /* overflow: scroll; */
+    letter-spacing: 2px;
+    /* max-width: 200px; */
+}
+
+.p-title-edit a {
+  text-decoration: none;
+  color:#ff5d55;
+
+}
      
 
 </style>
@@ -375,7 +412,9 @@ body{
   
  <div class="newchunk-title-edit"><input type="text" name="title" value="<%= @newchunk.title %>"></div>
 
-<div class="text-edit"><textarea type="text" name="text" value="<%= @newchunk.text %>" placeholder="text of your thingy"></textarea></div>
+
+<div class="text-edit"><textarea type="text" name="text" placeholder="text of your thingy"><%= @newchunk.text %></textarea></div>
+
   
   <div class="vid"><input type="url" name="video_link" value="<%= @newchunk.video_link %>" placeholder="video link"></div>
   
@@ -400,7 +439,7 @@ body{
         
   </div> 
 
-<div class="p-title-edit"><a href="/<%=@project.pslug%>/index"> A2 </a></div>
+<div class="p-title-edit"><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></div>
  <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
 
  <div id="score-edit"><a href="/<%=@project.pslug%>/final_map">SCORE</a></div>

@@ -59,9 +59,13 @@ class NewchunkController < ApplicationController
   
   get '/newchunks/:id/edit' do
     @newchunk = Newchunk.find_by_id(params[:id])
+    if @newchunk.user_id == current_user.id
      oldchunk = Oldchunk.find_by_id(@newchunk.oldchunk_id)
-        @project = Project.find_by_id(oldchunk.project_id)
+      @project = Project.find_by_id(oldchunk.project_id)
     erb :'newchunks/edit_newchunk'
+    else
+    erb :'newchunks/show_newchunk'
+    end
   end
 
   get '/newchunks/:id/show' do
