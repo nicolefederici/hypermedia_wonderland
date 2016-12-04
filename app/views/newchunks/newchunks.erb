@@ -260,20 +260,6 @@ font-family: 'Audiowide', cursive;
     height:400px;
 }
 
-
-
-.delete-button-n{
-  position:absolute;
-  
-} 
-.trash-can-n {
-    position: absolute;
-    width: 38px;
-    left: 909px;
-    top: 155px;
-    height: 100px;
-
-} 
 .little-wrapper {
   position:relative;
   margin:0 auto 120px;
@@ -311,6 +297,23 @@ font-family: 'Audiowide', cursive;
     width: 145px;
 
 }
+
+.delete-button-n {
+  position: absolute;
+    left: 900px;
+    font-size: 22px;
+    top: 184px;
+    width: 100px;
+}
+
+.trash-can-n {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transform: scale(1);
+    transform-origin: 137px 94px;
+    color: red;
+  }
 </style>
 
 
@@ -359,18 +362,21 @@ font-family: 'Audiowide', cursive;
     <%end%>
     
 
-<div id="delete-button-n">
+
+  <%if newchunk.user_id == current_user.id%>
+  <div class="delete-button-n">
   
   <form method="post" action="/newchunks/<%= newchunk.id %>/delete">
 
             
-  <input type="hidden" name="_method" class="hidden" value="DELETE"></input>
+  <input type="hidden" name="_method" id="hidden" value="DELETE"></input>
   
   <input type="image" class="trash-can-n" src="/images/trash-red.svg"></input>
   
   </form>
-        
-  </div> 
+</div>
+<%end%>
+
 </div>
 
  <% end %>

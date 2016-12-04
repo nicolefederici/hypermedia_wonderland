@@ -302,15 +302,18 @@ body{
 }
 
 #scroll-box{
-  top:546px;
-  min-height:300px;
-  overflow:scroll;
-  overflow-x:scroll;
-  overflow-y:scroll;
+  top: 139px;
+    position: fixed;
+    
+    width: 1100px;
+    left: 100px;
+    overflow: scroll;
+    padding-top: 26px;
+    height:400px;
 }
 
 #trash-can {
-      position: fixed;
+    position: fixed;
     left: 999px;
     top: 456px;
     width: 278px;
@@ -343,7 +346,7 @@ body{
 <div id="oldchunk-text"><%= @oldchunk.text %></div><br>
    
 <!-- THE FOUR CLICKABLE ICONS FOR THE VIDEO, PICS, SOUND, AND SCORE -->
-
+<!--  -->
 <div id="video"><a href="<%= @newchunk.video_link %>" target="_blank"><img src="/images/video-camera.svg"></a></div>
           
 <div id="image"><a href="<%= @newchunk.image_link %>" target="_blank"><img src="/images/camera.svg"></a></div>
@@ -359,7 +362,20 @@ body{
 <div id="vote-count"> votes <%= @vote_counts[@newchunk.id]%></div>
 
 <div id="newchunk-text"><%= @newchunk.text %></div><br>
+
+<div id="delete-button">
+  
+  <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
+
+            
+  <input type="hidden" name="_method" id="hidden" value="DELETE"></input>
+  
+  <input type="image" id="trash-can" src="/images/trash-red.svg"></input>
+  
+  </form>
         
+  </div> 
+       
 
 <!-- HERE IS WHERE USERS WILL COMMENT INTO THE FORM ABOUT A NEW IDEA OF ANOTHER USER- AND THEY WILL GET TO VOTE ON THEIR FAV. NEW VERSION  -->       
     
@@ -387,30 +403,12 @@ body{
         <%end%>
 
     </div>
-
-<!-- DELETE BUTTON ;NEEDS ICON CLICKABLE  -->       
-        
-<div id="delete-button">
   
-  <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
-
-            
-  <input type="hidden" name="_method" id="hidden" value="DELETE"></input>
-  
-  <input type="image" id="trash-can" src="/images/trash-red.svg"></input>
-  
-  </form>
-        
-  </div> 
-      
-  <!-- THE EDIT THE NEWCHUNK THINGY ON THE SIDE OF IT -->
-  
-  </div>
+  </div> <!-- end of scroll box -->
 </div>
-  
+  <%if @newchunk.user_id == current_user.id%>
   <div id="side-edit"><a href='/newchunks/<%=@newchunk.id%>/edit'>EDIT</a>
-  </div>
-  
+  </div><%end%>
   <!-- "SCORE" CHECK OTHER WRITTEN CODE IN OLDCHUNKS/OLDCHUNKS -->
   <div id="score"><a href='/<%=@project.pslug%>/final_map'>SCORE</a></div>
 

@@ -1,32 +1,406 @@
 <style> 
 body{
-background-color: #fad2e0;
-color: #ff5d55;
-font-family: 'Audiowide', cursive;
+    background-color: #fad2e0;
+    color: #ff5d55;
+    font-family: 'Audiowide', cursive;
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 90%;
+  }
+   a {
+    text-decoration: none;
+    } 
+    a:link {
+      color: #ff5555;
+    }
+    a:visited {
+      color: #ff5555;
+    }
+    a:hover {
+      color: white;
+    }
+
+
+    #try-box {
+  display:none;
 }
+ .newchunk-title-edit {
+    letter-spacing: 13px;
+    top: 197px;
+    left: 569px;
+    height: 110px;
+    font-style: italic;
+    color: black;
+    position: fixed;
+    overflow: scroll;
+  }
+
+  .newchunk-title-edit input{
+    border:transparent;
+    background-color: transparent;
+    font-family: "Courier New";
+    font-size: 15px;
+
+  }
+
+   .newchunk-title-edit input::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .newchunk-title-edit input::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .newchunk-title-edit input:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+     .newchunk-title-edit input:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+  
+  .pink-box-edit {
+   
+    border: 1px solid #ff3823;
+    background-color: rgb(253, 244, 248);
+    border-radius: 35px;
+    color: black;
+    width: 576px;
+    height: 358px;
+    left: 540px;
+    top: 148px;
+    position: fixed;
+    padding: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    font-style: italic;
+    margin-bottom: -13px;
+    }
+
+      .pink-box-edit::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .pink-box-edit::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .pink-box-edit:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+     .pink-box-edit:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+
+     .pink-box-edit a{
+
+    text-decoration: none;
+    } 
+    a:link {
+      color: #ff5555;
+    }
+    a:visited {
+      color: #ff5555;
+    }
+    a:hover {
+      color: white;
+    }
+
+
+  #score-edit {
+    font-style: italic;
+    font-weight: bold;
+    position: fixed;
+    font-size: 103px;
+    letter-spacing: 11px;
+    left: 209px;
+    top: 548px;
+    width: 183px;
+    height: 56px;
+    }
+
+    #score-edit a{
+      text-decoration: none;
+      color:#ff5d55;
+    }
+    
+    #back-to-project-index{
+    text-align: center;
+    position: fixed;
+    left: 8px;
+    top: -114px;
+    width: 1272px;
+    height: 233px;
+    font-size: 338px;
+    letter-spacing: 15px;
+    font-style: italic;
+    z-index: 0;
+    }
+
+
+    #back-to-project-index a{
+    text-decoration: none;
+    color: rgba(251, 137, 203, 0.69);
+}
+    
+
+    .text-edit {
+    position: fixed;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family: "Courier New";
+    top: 248px;
+    overflow: scroll;
+    left: 350;
+    left: 572px;
+}
+
+.text-edit textarea {
+    width: 532px;
+    height: 245px;
+    color: black;
+    background-color: transparent;
+    border: transparent;
+}
+
+ .text-edit textarea::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .text-edit textarea::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .text-edit textarea:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+     .text-edit textarea:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+
+.vid {
+    position: fixed;
+    top: 413px;
+    height: 58px;
+    width: 195px;
+    left: 144px;
+    }
+    
+    .vid input {
+    border-top: hidden;
+    border-left: hidden;
+    background-color: transparent;
+    border-bottom-color: red;
+    border-right: hidden;
+    border-width: 1px;
+    width:331px;
+  }
+
+   .vid input::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .vid input::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .vid input:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+     .vid input:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+
+  .pics {
+    position: fixed;
+    top: 349px;
+    height: 58px;
+    width: 195px;
+    left: 144px;
+  }
+  .pics input {
+    border-top: hidden;
+    border-left: hidden;
+    background-color: transparent;
+    border-bottom-color: red;
+    border-right: hidden;
+    border-width: 1px;
+    width:331px;
+    }
+     .pics input::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .pics input::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .pics input:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+     .pics input:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+
+   .sound {
+    position: fixed;
+    top: 477px;
+    height: 58px;
+    width: 195px;
+    left: 144px;
+    font-family: Audiowide;
+    font-size: 12pt;
+  }
+ 
+
+ .sound input {
+    border-top: hidden;
+    border-left: hidden;
+    background-color: transparent;
+    border-bottom-color: red;
+    border-right: hidden;
+    border-width: 1px;
+    width:331px;
+ }
+
+ .sound input::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .sound input::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .sound input:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+     .sound input:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+
+     #delete-button-edit {
+    position: fixed;
+    left: 1024px;
+    font-size: 22px;
+    top: 411px;
+    
+   }
+
+#trash-can-edit {
+    position: fixed;
+    left: 936px;
+    top: 487px;
+    width: 278px;
+    height: 26px;
+    transform: scale(1);
+    transform-origin: 137px 94px;
+    color: red;
+}   
+
+   #plus-edit {
+    position: fixed;
+    left: 770px;
+    top: 423px;
+    width: 192px;
+    height: 147px;
+    transform: scale(1);
+    transform-origin: 137px 94px;
+    color: red;
+}
+
+     
+
 </style>
 
 
 
+<div id="back-to-project-index"><a href="/projects">HW
+</a></div>
+ 
+ <div class="pink-box-edit"></div>
 
 
-<h2>New Artwork Edit</h2>
 <form method="post" action="/newchunks/<%= @newchunk.id %>">
+   <input id="hidden" type="hidden" name="_method" value="PATCH">
   
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <input type="text" name="title" value="<%= @newchunk.title %>"><br>
-  <textarea type="text" name="text" value="<%= @newchunk.text %>"></textarea><br>
-  <input type="url" name="video_link" value="<%= @newchunk.video_link %>"><br>
-  <input type="url" name="image_link" value="<%= @newchunk.image_link %>"><br>
-  <input type="url" name="sound_link" value="<%= @newchunk.sound_link %>"><br>
-  <input type="submit" id="submit" value="submit" class="btn btn-primary"></input>
+ <div class="newchunk-title-edit"><input type="text" name="title" value="<%= @newchunk.title %>"></div>
+
+<div class="text-edit"><textarea type="text" name="text" value="<%= @newchunk.text %>" placeholder="text of your thingy"></textarea></div>
+  
+  <div class="vid"><input type="url" name="video_link" value="<%= @newchunk.video_link %>" placeholder="video link"></div>
+  
+  <div class="pics"><input type="url" name="image_link" placeholder="image link" value="<%= @newchunk.image_link %>"></div>
+
+  <div class="sound"><input type="url" placeholder="sound link" name="sound_link" value="<%= @newchunk.sound_link %>"></div>
+
+<input type="image" id="plus-edit" src="/images/plus-red.svg">
+
 </form>
 
-<form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
-<input type="hidden" name="_method" id="hidden" value="DELETE"></input><input type="submit" id="submit" value="Delete" class="btn btn-primary"></input>
-</form>
+<div id="delete-button-edit">
+  
+  <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
 
-<div><h2><a href="/<%=@project.pslug%>/index">AUTOMATE THE SCENE TITLE HERE</a></h2></div>
+            
+  <input type="hidden" name="_method" id="hidden" value="DELETE"></input>
+  
+  <input type="image" id="trash-can-edit" src="/images/trash-red.svg"></input>
+  
+  </form>
+        
+  </div> 
+
+<div class="p-title-edit"><a href="/<%=@project.pslug%>/index"> A2 </a></div>
  <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
 
- <div><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>
+ <div id="score-edit"><a href="/<%=@project.pslug%>/final_map">SCORE</a></div>

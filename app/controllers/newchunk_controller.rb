@@ -93,14 +93,19 @@ class NewchunkController < ApplicationController
   end
   
 
-  patch '/newchunks' do
-    if params[:content] == ""
+  patch '/newchunks/:id' do
+    if params[:text] == ""
       redirect to "/newchunks/#{params[:id]}/edit"
     else
       @newchunk = Newchunk.find_by_id(params[:id])
-      @newchunk.content = params[:content]
+      @newchunk.text = params[:text]
+      @newchunk.title = params[:title]
+      @newchunk.image_link = params[:image_link]
+      @newchunk.sound_link = params[:sound_link]
+      @newchunk.video_link = params[:video_link]
       @newchunk.save
-      redirect to "/newchunks/#{@newchunk.id}"
+
+      redirect to "/newchunks/#{@newchunk.id}/show"
     end
   end
 
