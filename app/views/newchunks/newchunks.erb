@@ -26,27 +26,29 @@ font-family: 'Audiowide', cursive;
 
 
     #side-title-n {
-    font-size: 28px;
-    letter-spacing: 1px;
-    top: 36%;
-    left: -248px;
-    height: 22%;
+    font-size: 38px;
+    letter-spacing: 5px;
+    top: 322px;
+    left: -140px;
+    height: 78px;
     transform: rotate(-90deg);
     z-index: 4;
     font-style: italic;
     color: #ff5d55;
     position: fixed;
-    /* max-height: 1119px; */
-    /* max-width: 1100px; */
-    overflow: scroll}
-
-    #video-n {
+    overflow: scroll;
+    width: 379px;
+    white-space: nowrap;
+    }
+  
+  #video-n {
     position: absolute;
     top: 187px;
-    height: 49px;
+    height: 48px;
     width: 51px;
-    left: 244px;
-    }
+    left: 248px;
+  }
+
 
   #image-n {
     position: absolute;
@@ -329,7 +331,7 @@ font-family: 'Audiowide', cursive;
 <!-- <div class="wrapper" -->
 <!-- indi --><div id="p-title-n"><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></div>
 
-<!-- indi --><div id="side-title-n">ALL <%= @oldchunk.title%></div>
+<!-- indi --><div id="side-title-n">ALL <%= @oldchunk.title%>s</div>
 
 <div class="big-wrapper">
     
