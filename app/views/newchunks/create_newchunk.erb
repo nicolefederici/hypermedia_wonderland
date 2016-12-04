@@ -39,7 +39,7 @@ body{
     color: red;}
 
 #name-create {
-        position: fixed;
+    position: fixed;
     left: -17px;
     font-size: 20px;
     transform: rotate(-90deg);
@@ -73,28 +73,28 @@ body{
 
 #video-create {
     position: fixed;
-    top: 453px;
+    top: 417px;
     height: 48px;
     width: 51px;
-    left: 339px;
+    left: 120px;
     z-index:13;
   }
 
   #image-create {
     position: fixed;
-    top: 453px;
+    top: 473px;
     height: 48px;
     width: 51px;
-    left: 236px;
+    left: 120px;
     z-index:13;
   }
 
   #sound-create {
   position: fixed;
-    top: 456px;
+    top: 431px;
     height: 48px;
     width: 61px;
-    left: 136px;
+    left: 120px;
     z-index:13;
   }
 
@@ -112,22 +112,24 @@ body{
 }
 
   #comment-show-create  {
-        border: 1px solid #ff3823;
+    border: 1px solid #ff3823;
     background-color: rgb(253, 244, 248);
-    border-radius: 10px;
+    border-radius: 20px;
     font-size: 100%;
     color: black;
     width: 543px;
-    height: 138px;
-    left: 0px;
-    top: 39px;
+    height: 335px;
+    left: 545px;
+    top: 127px;
     position: absolute;
-    padding: 10px;
+    padding: 50px 40px;
     letter-spacing: 2px;
     font-family: "Courier New";
     font-size: 12px;
     font-style: italic;
-    z-index: 14;}
+    z-index: 14;
+    position: fixed;
+}
 
   #comment-show-create::-webkit-input-placeholder{
        font-family:Audiowide;
@@ -318,7 +320,7 @@ body{
    }
 
    #plus-show-create {
-        position: absolute;
+    position: absolute;
     left: 201px;
     top: 119px;
     width: 192px;
@@ -363,6 +365,22 @@ body{
     padding-top: 243px;
 }
 
+  #title-text-create {
+    position: absolute;
+    font-family: "Courier New";
+    font-size: 25px;
+    left: 434px;
+    top: 147px;
+    /* overflow: scroll; */
+    z-index: 15;
+    background-color: transparent;
+    border-radius: 20px;;
+
+  
+
+  }
+
+
 </style>
 
 
@@ -370,23 +388,28 @@ body{
 
 
 
- <div><h2><a href="/<%=@project.pslug%>/index"><%=@project.title%> (index)</a></h2></div>
+ <div id="p-title-create"><a href="/<%=@project.pslug%>/index"><%=@project.title%> (index)</a></div>
 
 <form method="post" action="/newchunks">
-  <input type="hidden" name="oldchunk_id" value="<%=@oldchunk.id%>">
-  <input type="text" name="title" placeholder="title"><br>
-  <textarea type="text" name="text" placeholder="text"></textarea><br>
-  <input type="url" name="video_link" placeholder="video link"><br>
-  <input type="url" name="image_link" placeholder="image link"><br>
-  <input type="url" name="sound_link" placeholder="soundcloud link"><br>
+  
+  <div id="title-text-create"><input type="hidden" name="oldchunk_id" value="<%=@oldchunk.id%>">
+  <input type="text" name="title" placeholder="title of new idea"></div>
+  
+  <textarea id="comment-show-create" type="text" name="text" placeholder="text of new idea"></textarea><br>
+  
+  <input id="video-create" type="url" name="video_link" placeholder="video link"><br>
+  
+  <input id="image-create"type="url" name="image_link" placeholder="image link"><br>
+  
+  <input id="sound-create" type="url" name="sound_link" placeholder="soundcloud link"><br>
   
  
 <input type="submit" id="submit" value="submit" class= "btn btn-primary">
 </form>
 
-<div><h2><a href="/<%=@project.pslug%>/<%=@oldchunk.oslug%>/index"><%=@oldchunk.title%></a></h2></div>
+<div id="o-title-create"><a href="/<%=@project.pslug%>/<%=@oldchunk.oslug%>/index"><%=@oldchunk.title%></a></div>
  <!--I need to display the current vote total on each, and where users can upvote their fav version of the scene- I'm gonna let everybody like anything once make it boolean so if the click again it will undo the like-->
 
- <div><h2><a href="/<%=@project.pslug%>/final_map">SCORE</a></h2></div>
+ <div id="score-create"><a href="/<%=@project.pslug%>/final_map">SCORE</a></div>
 
  
