@@ -22,7 +22,7 @@ class ProjectController < ApplicationController
       puts oldchunk.title
       newchunks = Newchunk.where("oldchunk_id = ?", oldchunk.id)
       puts newchunks
-      if newchunks == nil
+      if newchunks.size == 0
         @highest_votes << Newchunk.new(title: "there is no vote data for this section")
         puts "there isn't any data for this section yet."
       else
