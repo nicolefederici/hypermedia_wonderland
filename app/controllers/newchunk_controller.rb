@@ -21,7 +21,7 @@ class NewchunkController < ApplicationController
     if params[:text] == ""
       redirect to "/newchunks/create_newchunk"
     else
-      newchunk = Newchunk.create(params)
+      newchunk = Newchunk.create(title: params[:title], text: params[:text],video_link: params[:video_link],image_link: params[:image_link], sound_link: params[:sound_link], oldchunk_id: params[:oldchunk_id])
       newchunk.user_id = current_user.id
       newchunk.save
        oldchunk = Oldchunk.find_by_id(newchunk.oldchunk_id)
