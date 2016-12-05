@@ -13,7 +13,27 @@ class ProjectController < ApplicationController
   erb :'oldchunks/oldchunks'
   end
 
-  get '/pslug/final_map' do
+  get '/:pslug/final_map' do
+    @highest_votes = []
+
+    @project = Project.find_by_pslug(params[:pslug])
+    @oldchunks = Oldchunk.where("project_id = ?", @project.id)
+    @oldchunks.each do |oldchunk|
+      puts oldchunk.title
+      newchunks = Newchunk.where("oldchunk_id = ?", oldchunk.id)
+      puts newchunks
+      if newchunks == nil
+        @highest_votes << Newchunk.new(title: "there is no vote data for this section")
+        puts "there isn't any data for this section yet."
+      else
+        likes_array = newchunks.collect do | newchunk|
+          Like.where("newchunk_id = ?", newchunk.id).size
+        end
+        @highest_votes << newchunks[likes_array.each_with_index.max[1]]
+
+      end
+      
+    end
     erb :'final_map'
   end
 
@@ -26,5 +46,7 @@ class ProjectController < ApplicationController
     project.save
     redirect("#{project.pslug}/oldchunk/new")
   end
+
+  
 
 end

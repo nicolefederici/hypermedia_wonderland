@@ -9,20 +9,18 @@
 
 
 
-<p>Here are the highests ranking versions of scenes, <%= @project.newchunk %></p> 
+<div>Here are the highest ranking versions of scenes, <%= @project.title %></div> 
 
 
-<% @user.oldchunks.each do |oldchunk| %>
- 
- <p><%= oldchunk.title %></p>
- <p><%= oldchunk.text %></p><br>
+
+<%@highest_votes.each do |newchunk|%>
+<div><%= newchunk.title %></div>
+ <div><%= newchunk.text %></div>
+ <div><%= newchunk.image_link %></div>
+ <div><%= newchunk.video_link %></div>
+ <div><%= newchunk.sound_link %></div>
  <% end %>
+
+
+
  
-<% @user.newchunks.each do |newchunk| %>
- 
- <p><%= newchunk.title %></p>
- <p><%= newchunk.text %></p>
- <p><%= newchunk.image_link %></p>
- <p><%= newchunk.video_link %></p>
- <p><%= newchunk.sound_link %></p><br>
- <% end %>
