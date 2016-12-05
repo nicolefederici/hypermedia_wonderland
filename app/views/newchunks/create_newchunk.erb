@@ -23,6 +23,9 @@ body{
       color: white;
     }
 
+#try-box {
+  display:none;
+}
    
 #p-title-create {
   
@@ -70,7 +73,7 @@ body{
   }
   
    
-
+/*
 #video-create {
     position: fixed;
     top: 417px;
@@ -87,16 +90,150 @@ body{
     width: 51px;
     left: 120px;
     z-index:13;
-  }
+  }*/
 
-  #sound-create {
+  /*#sound-create {
   position: fixed;
     top: 431px;
     height: 48px;
     width: 61px;
     left: 120px;
     z-index:13;
+  }*/
+  .vid-create {
+    position: fixed;
+    top: 413px;
+    height: 58px;
+    width: 195px;
+    left: 144px;
+    }
+    .vid-create input {
+    border-top: hidden;
+    border-left: hidden;
+    background-color: transparent;
+    border-bottom-color: red;
+    border-right: hidden;
+    border-width: 1px;
+    width:331px;
+    font-family: Audiowide;
+    font-size: 18px;
+    color: #ff3823;
   }
+
+  .vid-create input::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .vid-create input::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .vid-create input:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+     .vid-create input:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+
+  .pics-create {
+    position: fixed;
+    top: 349px;
+    height: 58px;
+    width: 195px;
+    left: 144px;
+  }
+  .pics-create input {
+    border-top: hidden;
+    border-left: hidden;
+    background-color: transparent;
+    border-bottom-color: red;
+    border-right: hidden;
+    border-width: 1px;
+    width:331px;
+
+    font-family: Audiowide;
+    font-size: 18px;
+    color: #ff3823;
+
+    }
+     .pics-create input::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .pics-create input::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .pics-create input:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+     .pics-create input:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+
+   .sound-create {
+    position: fixed;
+    top: 477px;
+    height: 58px;
+    width: 195px;
+    left: 144px;
+    font-family: Audiowide;
+    font-size: 12pt;
+  }
+ 
+
+ .sound-create input {
+    border-top: hidden;
+    border-left: hidden;
+    background-color: transparent;
+    border-bottom-color: red;
+    border-right: hidden;
+    border-width: 1px;
+    width:331px;
+    font-family: Audiowide;
+    font-size: 18px;
+    color: #ff3823;
+ }
+
+ .sound-create input::-webkit-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .sound-create input::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+   
+     .sound-create input:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+     .sound-create input:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+     }
+
 
   #newchunk-text-create {
   font-size: 45px;
@@ -319,10 +456,10 @@ body{
     
    }
 
-   #plus-show-create {
-    position: absolute;
-    left: 201px;
-    top: 119px;
+   #plus-create {
+    position: fixed;
+    left: 788px;
+    top: 488px;
     width: 192px;
     height: 147px;
     color: red;
@@ -366,45 +503,76 @@ body{
 }
 
   #title-text-create {
-    position: absolute;
+    position: fixed;
     font-family: "Courier New";
     font-size: 25px;
-    left: 434px;
+    left: 587px;
     top: 147px;
     /* overflow: scroll; */
     z-index: 15;
     background-color: transparent;
-    border-radius: 20px;;
-
+    border-radius: 20px;
   
 
   }
 
+  #title-text-create input {
+    border: none;
+    background-color: transparent;
+  }
+
+  #title-text-create input::-webkit-input-placeholder{
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+       font-size: 15px;
+     }
+   
+     #title-text-create input::-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+       font-size: 15px;
+     }
+   
+     #title-text-create input:-moz-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+       font-size: 15px;
+     }
+     #title-text-create input:-ms-input-placeholder {
+       font-family:Audiowide;
+       font-style: italic;
+       color:#ff3823;
+       font-size: 15px;
+     }
 
 </style>
 
 
-<h2>Create New Artwork</h2>
 
 
 
- <div id="p-title-create"><a href="/<%=@project.pslug%>/index"><%=@project.title%> (index)</a></div>
+
+ <div id="p-title-create"><a href="/<%=@project.pslug%>/index"><%=@project.title%></a></div>
 
 <form method="post" action="/newchunks">
   
   <div id="title-text-create"><input type="hidden" name="oldchunk_id" value="<%=@oldchunk.id%>">
-  <input type="text" name="title" placeholder="title of new idea"></div>
+  <input type="text" name="title" placeholder="title"></div>
   
   <textarea id="comment-show-create" type="text" name="text" placeholder="text of new idea"></textarea><br>
   
-  <input id="video-create" type="url" name="video_link" placeholder="video link"><br>
+  <div class="vid-create"><input type="url" name="video_link" placeholder="video link"></div><br>
   
-  <input id="image-create"type="url" name="image_link" placeholder="image link"><br>
+  <div class="pics-create"><input type="url" name="image_link" placeholder="image link"></div><br>
   
-  <input id="sound-create" type="url" name="sound_link" placeholder="soundcloud link"><br>
+  <div class="sound-create"><input type="url" name="sound_link" placeholder="soundcloud link"></div><br>
   
+  <input type="image" id="plus-create" src="/images/plus-red.svg">
  
-<input type="submit" id="submit" value="submit" class= "btn btn-primary">
+
 </form>
 
 <div id="o-title-create"><a href="/<%=@project.pslug%>/<%=@oldchunk.oslug%>/index"><%=@oldchunk.title%></a></div>
