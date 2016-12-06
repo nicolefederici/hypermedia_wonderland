@@ -14,15 +14,19 @@ body{
   }
    a {
     text-decoration: none;
+
     } 
     a:link {
       color: #ff5555;
+      transition: initial;
     }
     a:visited {
-      color: #ff5555;
+      color: #f1056e;
+      transition: initial;
     }
     a:hover {
-      color: white;
+    color: #607fbb;
+    transition: initial;
     }
 
    
@@ -155,17 +159,7 @@ body{
      }
     
  #newchunk-title {
-    /*font-size: 25px;
-    color: rgba(255, 85, 85, 0.74);
-    width: 204px;
-    height: 141px;
-    left: 550px;
-    top: 94px;
-    position: fixed;
-    font-style: italic;*/
-    /* transform: rotate(-90deg); */
-
-  font-size: 28px;
+    font-size: 28px;
     letter-spacing: 1px;
     top: 36%;
     left: -248px;
@@ -380,7 +374,7 @@ body{
 <div id="name"><%= @newchunk_author.username %></div>
 
  <!-- OLDCHUNK TITLE -->
-  <div id="o-title"><%= @oldchunk.title %></div> 
+  <div id="o-title"><a href="/juliet-is-the-sun/<%= @oldchunk.oslug %>/index"><%= @oldchunk.title %></a></div> 
  
 
 <!--OLDCHUNK TEXT
