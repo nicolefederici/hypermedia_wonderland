@@ -288,12 +288,14 @@ body{
     
   #vote-checkbox {
     position: absolute;
-    left: 341px;
-    font-size: 13px;
-    top: 10px;
-    letter-spacing: 6px;
+    left: 18px;
+    font-size: 10px;
+    top: 13px;
+    letter-spacing: 5px;
     font-style: italic;
-
+    width: 471px;
+    white-space: no;
+    white-space: nowrap;
   }
    
    #submit {
@@ -421,7 +423,7 @@ body{
 
 <textarea id="comment-show" type="text" name="comment" placeholder="enter comment here"></textarea>
               
-<div id="vote-checkbox">use your vote?<input type="checkbox" name="vote" value="<%=@newchunk.id%>"></input></div>
+<div id="vote-checkbox">use one of your .. remaining votes on this piece?<input type="checkbox" name="vote" value="<%=@newchunk.id%>"></input></div>
               
 <!-- <div><input type="submit" id="submit" value="submit" class="btn btn-primary"> -->
 <input type="image" id="plus-show" src="/images/plus-red.svg">
