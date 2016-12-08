@@ -209,15 +209,16 @@ color:white;
    
    <div class="oldchunk-title"><a href="/<%=@project.pslug%>/<%=oldchunk.oslug%>/index"><%= oldchunk.title %></a></div>
 
+   <% if current_user.username == "nicolefederici"%>
    <div class="trash-position"><form method="post" action="/oldchunks/<%= oldchunk.id %>/delete">
     
     <input type="hidden" name="_method" id="hidden" value="DELETE"></input>
     <input type="image" class="trash-old" src="/images/trash.svg"></input>
    
    </form>
- </div>
+ </div><%end%>
    
-   <div class="oldchunk-text"><%= oldchunk.text.gsub(/\n/, '<br/>') %></div>
+   <div class="oldchunk-text"><%= h(oldchunk.text).gsub(/\n/, '<br/>') %></div>
 
    
 

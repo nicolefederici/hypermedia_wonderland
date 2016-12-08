@@ -381,7 +381,7 @@ body{
 
 <!--OLDCHUNK TEXT
  -->  
-<div id="oldchunk-text"><%= oldchunk.text.gsub(/\n/, '<br/>') %></div><br>
+<div id="oldchunk-text"><%= h(oldchunk.text).gsub(/\n/, '<br/>') %></div><br>
    
 <!-- THE FOUR CLICKABLE ICONS FOR THE VIDEO, PICS, SOUND, AND SCORE -->
 <!--  -->
@@ -437,7 +437,7 @@ body{
         <% @comments.each do |comment| %>
         <%user = User.find_by_id(comment.user_id) %>
         <div class="indi-comments"><p><%= user.username %></p>
-        <p><%= comment.text %></p><br></div>
+        <p><%= h(comment.text).gsub(/\n/, '<br/>') %></p><br></div>
         <%end%>
 
    </div>

@@ -1,4 +1,6 @@
 require './config/environment'
+include ERB::Util
+#this is a module to help sanitize for XSS
 
 class ApplicationController < Sinatra::Base
 

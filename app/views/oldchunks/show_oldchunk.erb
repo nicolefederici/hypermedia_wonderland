@@ -5,5 +5,5 @@
 <% @user.oldchunks.each do |oldchunk| %>
  
  <p><%= oldchunk.title %></p>
- <p><%= oldchunk.text.gsub(/\n/, '<br/>')%></p><br>
+ <p><%= h(oldchunk.text).gsub(/\n/, '<br/>')%></p><br>
  <% end %>
