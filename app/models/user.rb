@@ -7,7 +7,7 @@ class User <ActiveRecord::Base
   has_secure_password
 
   def slug
-    username.downcase.gsub(" ", "-")
+    title.strip.downcase.gsub(/(&|&amp;)/, ' and ').gsub(/[\s\.\/\\]/, '-').gsub(/[^\w-]/, '').gsub(/[-_]{2,}/, '-').gsub(/^[-_]/, '').gsub(/[-_]$/, '')
   end
 
   def self.find_by_slug(slug)

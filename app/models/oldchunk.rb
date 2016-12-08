@@ -3,7 +3,7 @@ class Oldchunk <ActiveRecord::Base
   has_many :newchunks
 
   def oslug
-    title.downcase.gsub(" ", "-")
+    title.strip.downcase.gsub(/(&|&amp;)/, ' and ').gsub(/[\s\.\/\\]/, '-').gsub(/[^\w-]/, '').gsub(/[-_]{2,}/, '-').gsub(/^[-_]/, '').gsub(/[-_]$/, '')
   end
 
   def self.find_by_oslug(oslug)
