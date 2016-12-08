@@ -3,7 +3,7 @@
   
   <input id="hidden" type="hidden" name="_method" value="PATCH">
   <input type="text" name="title" value="<%= @oldchunk.title %>"><br>
-  <textarea type="text" name="text" value="<%= @oldchunk.text %>">
+  <textarea type="text" name="text" value="<%= oldchunk.text.gsub(/\n/, '<br/>') %>">
   <input type="submit" id="submit" value="submit" class="btn btn-primary">
 
 </form>

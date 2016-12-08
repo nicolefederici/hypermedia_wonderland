@@ -182,7 +182,7 @@ body{
     transform: rotate(-90deg);
     z-index: 4;
     font-style: italic;
-    color: white;
+   
     position: fixed;
     }
 
@@ -381,7 +381,7 @@ body{
 
 <!--OLDCHUNK TEXT
  -->  
-<div id="oldchunk-text"><%= @oldchunk.text %></div><br>
+<div id="oldchunk-text"><%= oldchunk.text.gsub(/\n/, '<br/>') %></div><br>
    
 <!-- THE FOUR CLICKABLE ICONS FOR THE VIDEO, PICS, SOUND, AND SCORE -->
 <!--  -->
