@@ -381,7 +381,7 @@ body{
 
 <!--OLDCHUNK TEXT
  -->  
-<div id="oldchunk-text"><%= h(oldchunk.text).gsub(/\n/, '<br/>') %></div><br>
+<div id="oldchunk-text"><%= h(@oldchunk.text).gsub(/\n/, '<br/>') %></div><br>
    
 <!-- THE FOUR CLICKABLE ICONS FOR THE VIDEO, PICS, SOUND, AND SCORE -->
 <!--  -->
@@ -422,8 +422,11 @@ body{
 
 
 <textarea id="comment-show" type="text" name="comment" placeholder="enter comment here"></textarea>
-              
-<div id="vote-checkbox">use one of your .. remaining votes on this piece?<input type="checkbox" name="vote" value="<%=@newchunk.id%>"></input></div>
+ 
+               
+<div id="vote-checkbox"><% if @remaining_votes > 0 %>use one of your <%= @remaining_votes %> remaining votes on this piece?<input type="checkbox" name="vote" value="<%=@newchunk.id%>"></input>
+<% else %> you have no remaining votes!
+<% end %></div>
               
 <!-- <div><input type="submit" id="submit" value="submit" class="btn btn-primary"> -->
 <input type="image" id="plus-show" src="/images/plus-red.svg">
@@ -432,6 +435,7 @@ body{
 <input type="hidden" name="id" value="<%=@newchunk.id%>">
               
 </form>
+
 
     <div id="comment-wrapper">
         <% @comments.each do |comment| %>

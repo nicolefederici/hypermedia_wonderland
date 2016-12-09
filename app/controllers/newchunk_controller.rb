@@ -75,6 +75,14 @@ class NewchunkController < ApplicationController
     @vote_counts = Like.group(:newchunk_id).count
     @comments = Comment.where("newchunk_id =?", @newchunk.id)
     @newchunk_author = User.find_by_id(@newchunk.user_id)
+    total_oldchunks_current_project = Oldchunk.where("project_id =?", @project.id).count 
+
+     current_user_likes = Like.where("user_id =?", current_user.id) 
+
+      votes_on_this_project = current_user_likes.select {|like| like.newchunk.oldchunk.project == @project}.count
+      @remaining_votes = total_oldchunks_current_project - votes_on_this_project
+
+    
     erb :'newchunks/show_newchunk'
 
   end
