@@ -70,16 +70,25 @@ class NewchunkController < ApplicationController
 
   get '/newchunks/:id/show' do
     @newchunk = Newchunk.find_by_id(params[:id])
+    puts "@newchunk: #{@newchunk}"
     @oldchunk = Oldchunk.find_by_id(@newchunk.oldchunk_id)
+    puts "@oldchunk.id: #{@oldchunk.id}"
     @project = Project.find_by_id(@oldchunk.project_id)
+    puts "@project: #{@project}"
     @vote_counts = Like.group(:newchunk_id).count
+    puts "@vote_counts: #{@vote_counts}"
     @comments = Comment.where("newchunk_id =?", @newchunk.id)
+    puts "@comments: #{@comments}"
     @newchunk_author = User.find_by_id(@newchunk.user_id)
-    total_oldchunks_current_project = Oldchunk.where("project_id =?", @project.id).count 
+    puts "@newchunk_author: #{@newchunk_author}"
+    total_oldchunks_current_project = Oldchunk.where("project_id =?", @project.id).count
+    puts "total_oldchunks_current_project: #{total_oldchunks_current_project}" 
 
-     current_user_likes = Like.where("user_id =?", current_user.id) 
-
+     current_user_likes = Like.where("user_id =?", current_user.id)
+     puts "current_user_likes: #{current_user_likes}" 
+     current_user_likes.each {|like| puts "like.id #{like.id}"}
       votes_on_this_project = current_user_likes.select {|like| like.newchunk.oldchunk.project == @project}.count
+
       @remaining_votes = total_oldchunks_current_project - votes_on_this_project
 
     
