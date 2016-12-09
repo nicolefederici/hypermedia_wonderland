@@ -159,19 +159,19 @@ body{
      }
     
  #newchunk-title {
-    font-size: 28px;
+    font-size: 20px;
     letter-spacing: 1px;
-    top: 36%;
-    left: -248px;
+    top: 104px;
+    left: 528px;
     height: 22%;
-    transform: rotate(-90deg);
+    /* transform: rotate(-90deg); */
     z-index: 4;
     font-style: italic;
     color: #ff5d55;
     position: fixed;
     /* max-height: 1119px; */
     /* max-width: 1100px; */
-    overflow: scroll}
+    overflow: scroll;}
 
    #side-edit{
     font-size: 45px;
@@ -307,13 +307,13 @@ body{
 
    }
 
-   #delete-button {
+   /*#delete-button {
     position: fixed;
     left: 1024px;
     font-size: 22px;
     top: 411px;
     
-   }
+   }*/
 
    #plus-show {
         position: absolute;
@@ -335,7 +335,7 @@ body{
     padding-top: 0px;
     height: 287px;}
 
-#trash-can {
+/*#trash-can {
     position: fixed;
     left: 999px;
     top: 456px;
@@ -345,7 +345,7 @@ body{
     transform-origin: 137px 94px;
     color: red;
     z-index:14;
-}
+}*/
 
 #comment-wrapper {
 
@@ -401,7 +401,7 @@ body{
 
 <div id="newchunk-text"><%= @newchunk.text %></div><br>
 
-<div id="delete-button">
+<!-- <div id="delete-button">
   
   <form method="post" action="/newchunks/<%= @newchunk.id %>/delete">
 
@@ -412,7 +412,7 @@ body{
   
   </form>
         
-  </div> 
+  </div>  -->
        
 
 <!-- HERE IS WHERE USERS WILL COMMENT INTO THE FORM ABOUT A NEW IDEA OF ANOTHER USER- AND THEY WILL GET TO VOTE ON THEIR FAV. NEW VERSION  -->       

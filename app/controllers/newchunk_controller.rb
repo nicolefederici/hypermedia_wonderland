@@ -133,14 +133,21 @@ class NewchunkController < ApplicationController
   delete '/newchunks/:id/delete' do
     newchunk = Newchunk.find_by_id(params[:id]) 
         oldchunk = Oldchunk.find_by_id(newchunk.oldchunk_id)
+
+
+        newchunk.likes.each do |like| 
+          puts " like.newchunk_id #{like.newchunk_id}"
+          like.delete
+        end
+        newchunk.comments.each do |comment| 
+          puts "comment.newchunk_id #{comment.newchunk_id}"
+          comment.delete
+        end
+        
         newchunk.delete
         project = Project.find_by_id(oldchunk.project_id)
         redirect to "/#{project.pslug}/#{oldchunk.oslug}/index"
       end
 
-      post '/comments' do
-
-      end
-
-
+      
 end
