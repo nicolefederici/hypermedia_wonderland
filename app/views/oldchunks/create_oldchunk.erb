@@ -1,82 +1,79 @@
 <style> 
 body{
-background-color: #ffa834;
-color: white;
-font-family: 'Audiowide', cursive;
+  background-color: #ffa834;
+  color: white;
+  font-family: 'Audiowide', cursive;
 }
 
 #try-box {
   display: none;
 }
 
-
 #box {
-    
-    text-align: center;
-    position: fixed;
-    left: 22px;
-    top: 42px;
-    width: 269px;
-    height: 310px;
-    font-size: 365px;
-    letter-spacing: 20px;
-    font-style: italic;
-    font-weight: bold;
-    line-height: .85;
+  text-align: center;
+  position: fixed;
+  left: 22px;
+  top: 42px;
+  width: 269px;
+  height: 310px;
+  font-size: 365px;
+  letter-spacing: 20px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: .85;
   } 
 
 #plus {
-    position:fixed;
-    left:786px;
-    top:458px;
-    width:282px;
-    height:188px;
-    transform:scale(2);
-    transform-origin:141px 94px;
+  position:fixed;
+  left:786px;
+  top:458px;
+  width:282px;
+  height:188px;
+  transform:scale(2);
+  transform-origin:141px 94px;
   }
 
 #plus:focus {
-    border-color: transparent;
+  border-color: transparent;
   }
 
 #sreturn {
-    position:fixed;
-    left:340px;
-    top:555px;
-    width:680px;
-    height:20px;
-    font-size: 25px;
-    font-style:italic;
-    letter-spacing: 3px;
-    background-color: rgba(255, 168, 52, 0.02);
-    color:#ff3823;
-    font-family: Audiowide;
-    z-index: 4;
-
-  }
+  position:fixed;
+  left:340px;
+  top:555px;
+  width:680px;
+  height:20px;
+  font-size: 25px;
+  font-style:italic;
+  letter-spacing: 3px;
+  background-color: rgba(255, 168, 52, 0.02);
+  color:#ff3823;
+  font-family: Audiowide;
+  z-index: 4;
+}
 
 #sreturn a {
-    text-decoration: none;
-    color:white;
-  }
+  text-decoration: none;
+  color:white;
+}
 
 #title {
-    position:fixed;
-    padding-left: 10px;
-    left:280px;
-    top:110px;
-    width:742px;
-    height:107px;
-    font-size: 25px;
-    line-height: 1.3;
-    font-style:italic;
-    border-bottom:2px solid white;
-    background-color: #ffa834;
-    color:white;
-    font-family: Audiowide;
-    border-style:solid solid solid solid;
-    border-radius: 20px 20px 20px 20px;
-  }
+  position:fixed;
+  padding-left: 10px;
+  left:280px;
+  top:110px;
+  width:742px;
+  height:107px;
+  font-size: 25px;
+  line-height: 1.3;
+  font-style:italic;
+  border-bottom:2px solid white;
+  background-color: #ffa834;
+  color:white;
+  font-family: Audiowide;
+  border-style:solid solid solid solid;
+  border-radius: 20px 20px 20px 20px;
+}
 
   #title::-webkit-input-placeholder{
     color:white;
@@ -93,22 +90,23 @@ font-family: 'Audiowide', cursive;
     color: white;
   }
 
-#scene-text {  position:fixed;
-    padding-left: 10px;
-    left:280px;
-    top:267px;
-    width:742px;
-    height:222px;
-    font-size: 25px;
-    line-height: 1.3;
-    font-style:italic;
-    border:2px solid white;
-    background-color: #ffa834;
-    color:white;
-    font-family: Audiowide;
-    border-style:solid solid solid solid;
-    border-radius: 20px 20px 20px 20px;
-  }
+#scene-text {  
+  position:fixed;
+  padding-left: 10px;
+  left:280px;
+  top:267px;
+  width:742px;
+  height:222px;
+  font-size: 25px;
+  line-height: 1.3;
+  font-style:italic;
+  border:2px solid white;
+  background-color: #ffa834;
+  color:white;
+  font-family: Audiowide;
+  border-style:solid solid solid solid;
+  border-radius: 20px 20px 20px 20px;
+}
 
   #scene-text::-webkit-input-placeholder{
     color:white;
@@ -126,19 +124,11 @@ font-family: 'Audiowide', cursive;
   }
 
 
-
-
-
-
 </style>
-
-
-
 
 <div id="box">h<br>w</div>
 
 <div id="sreturn"><a href="/<%=@project.pslug%>/index">scene index</a></div>
-
 
 <form method="post" action="/oldchunks">
   

@@ -1,11 +1,11 @@
 <p>Here are your chunks, <%= @user.username %></p>
-
+<!-- this is a feature for the next pass, showing all scenes a user makes -->
 
 <% @user.oldchunks.each do |oldchunk| %>
  
  <p><%= oldchunk.title %></p>
  <p><%= oldchunk.text %></p><br>
- <% end %>
+<% end %>
  
 <% @user.newchunks.each do |newchunk| %>
  
@@ -14,4 +14,4 @@
  <p><%= newchunk.image_link %></p>
  <p><%= newchunk.video_link %></p>
  <p><%= newchunk.sound_link %></p><br>
- <% end %>
+<% end %>

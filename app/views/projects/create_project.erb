@@ -1,85 +1,86 @@
 
 
 <style> 
-body{
-background-color: #ffa834;
-color: white;
-font-family: 'Audiowide', cursive;
 
+body{
+  background-color: #ffa834;
+  color: white;
+  font-family: 'Audiowide', cursive;
 }
 
 #try-box {
   display: none;
 }
 
-  #box {
-    text-align: center;
-    position: fixed;
-    left: 29px;
-    top: 98px;
-    width: 267px;
-    height: 310px;
-    font-size: 423px;
-    letter-spacing: 55px;
-    font-style: italic;
-    font-weight: bold;
-    line-height: .675;
-  } 
+#box {
+  text-align: center;
+  position: fixed;
+  left: 29px;
+  top: 98px;
+  width: 267px;
+  height: 310px;
+  font-size: 423px;
+  letter-spacing: 55px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: .675;
+} 
 
  
   
-  #plus {
-    position:fixed;
-    left:786px;
-    top:458px;
-    width:282px;
-    height:188px;
-    transform:scale(2);
-    transform-origin:141px 94px;
-  }
+#plus {
+  position:fixed;
+  left:786px;
+  top:458px;
+  width:282px;
+  height:188px;
+  transform:scale(2);
+  transform-origin:141px 94px;
+}
 
-  #plus:focus {
-    border-color: transparent;
-  }
+#plus:focus {
+  border-color: transparent;
+}
 
-  #return {
-    position:fixed;
-    left:340px;
-    top:400px;
-    width:680px;
-    height:20px;
-    font-size: 25px;
-    font-style:italic;
-    letter-spacing: 3px;
-    background-color: rgba(255, 168, 52, 0.02);
-    color:#ff3823;
-    font-family: Audiowide;
-    z-index: 4;
+#return {
+  position:fixed;
+  left:340px;
+  top:400px;
+  width:680px;
+  height:20px;
+  font-size: 25px;
+  font-style:italic;
+  letter-spacing: 3px;
+  background-color: rgba(255, 168, 52, 0.02);
+  color:#ff3823;
+  font-family: Audiowide;
+  z-index: 4;
 
-  }
+}
 
   #return a {
     text-decoration: none;
     color:white;
   }
 
-  #title {
-    position:fixed;
-    padding-left: 10px;
-    left:280px;
-    top:210px;
-    width:742px;
-    height:107px;
-    font-size: 25px;
-    line-height: 1.3;
-    font-style:italic;
-    border-bottom:2px solid white;
-    background-color: #ffa834;
-    color:white;
-    font-family: Audiowide;
-    border-style:solid solid solid solid;
-    border-radius: 20px 20px 20px 20px;
-  }
+#title {
+  position:fixed;
+  padding-left: 10px;
+  left:280px;
+  top:210px;
+  width:742px;
+  height:107px;
+  font-size: 25px;
+  line-height: 1.3;
+  font-style:italic;
+  border-bottom:2px solid white;
+  background-color: #ffa834;
+  color:white;
+  font-family: Audiowide;
+  border-style:solid solid solid solid;
+  border-radius: 20px 20px 20px 20px;
+}
+  
   #title::-webkit-input-placeholder{
     color:white;
   }
@@ -101,7 +102,6 @@ font-family: 'Audiowide', cursive;
 <div id="box">h<br>w</div>
 
 <div id="return"><a href="/projects">return to list of projects</a></div>
-
 
 <form method="post" action="/projects">
   

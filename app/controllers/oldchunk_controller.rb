@@ -3,8 +3,7 @@ class OldchunkController < ApplicationController
   get "/:pslug/oldchunk/new" do
     @project = Project.find_by_pslug(params[:pslug])
     erb :"oldchunks/create_oldchunk"
-    end
-
+  end
     
 
 #see below for the page you enter your "script", scene by scene into.
@@ -29,16 +28,12 @@ class OldchunkController < ApplicationController
         newchunk.delete
       end
     end 
-    oldchunk.delete
-        
+    oldchunk.delete        
     redirect to "/#{project.pslug}/index"
-        
-      end
+  end
 
-      post '/comments' do
+# post '/comments' do
 
-      end
-
-
+# end
 
 end

@@ -1,29 +1,29 @@
 <style> 
+
 body{
-background-color: #ffa834;
-color: white;
-font-family: 'Audiowide', cursive;
+  background-color: #ffa834;
+  color: white;
+  font-family: 'Audiowide', cursive;
 }
 
 #subtitle {
-    margin-top: 40px;
-    text-align:center;
-    position:fixed;
-    font-size:18px;
-    letter-spacing:15px;
-    left:48px;
-    top:270px;
-    width:1164px;
-    height:116px;
-    color:white;
-    z-index: 0;
-  }
+  margin-top: 40px;
+  text-align:center;
+  position:fixed;
+  font-size:18px;
+  letter-spacing:15px;
+  left:48px;
+  top:270px;
+  width:1164px;
+  height:116px;
+  color:white;
+  z-index: 0;
+}
 
 #try-box {
     text-align:center;
     position:fixed;
     left:48px;
-    /*top:-20px;*/
     width:1164px;
     height:318px;
     font-size: 120px;
@@ -48,10 +48,7 @@ font-family: 'Audiowide', cursive;
     border-color: transparent;
   }
 
-
-/*boy, is this section in need of refactoring and reducing- will get to it later*/
   
-
   #name {
     position:fixed;
     left:244px;
@@ -62,14 +59,12 @@ font-family: 'Audiowide', cursive;
     line-height: 1.3;
     font-style:italic;
     border-bottom:2px solid white;
-    /*background-color: #ffa834;*/
     background-color: rgba(255, 168, 52, 0.02);
     color:white;
     font-family: Audiowide;
     border-style:none none solid none;
     z-index:8;
-    
-  }
+    }
   
   #name::-webkit-input-placeholder{
     color:white;
@@ -180,13 +175,9 @@ font-family: 'Audiowide', cursive;
   }
 
   
-
-  </style>
-  
-  <div id="try-box">hypermedia wonderland</div>
-  <div id="subtitle"> COLLABORATIVE COMPOSITION PLATFORM</div>
-
-
+</style>
+<div id="try-box">hypermedia wonderland</div>
+<div id="subtitle"> COLLABORATIVE COMPOSITION PLATFORM</div>
 <% unless locals.empty? %>
   <div id="please-sign-up"><%= message %></div>
 <% end %>
@@ -194,9 +185,6 @@ font-family: 'Audiowide', cursive;
 <% if session[:username_taken] == true %>
   <div id="duplicate-name-error">Somebody's already grabbed that kick-butt username. Pick your own!</div>
 <% end %>
-
-<!-- 
-<div id="sign-up">SIGN-UP</div> -->
 
 <form method="post" action="/signup">
   <input id="name" type="text" name="username" placeholder="username">
@@ -206,6 +194,6 @@ font-family: 'Audiowide', cursive;
   <input id="password" type="password" name="password" placeholder="password">
   </input>
 
-<input id="plus-sign" type="image" value="submit" src="/images/plus.svg"></input>
+  <input id="plus-sign" type="image" value="submit" src="/images/plus.svg"></input>
   
 </form>

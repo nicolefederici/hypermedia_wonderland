@@ -1,15 +1,14 @@
 
 <style>
 body{
-background-color: #2fa2bd;
-color: white;
-font-family: 'Audiowide', cursive;
+  background-color: #2fa2bd;
+  color: white;
+  font-family: 'Audiowide', cursive;
 }
 
 #try-box {
   display: none;
 }
-
 
 #s-hw-box {
   text-align: center;
@@ -22,7 +21,7 @@ font-family: 'Audiowide', cursive;
   letter-spacing: 15px;
   font-style: italic;
   z-index: 0;
-  } 
+} 
 
 #s-hw-box a{
   text-decoration: none;
@@ -30,17 +29,17 @@ font-family: 'Audiowide', cursive;
  }
 
 #s-project-title {
-   font-style: italic;
-   font-weight: bold;
-    position: fixed;
-    font-size: 66px;
-    letter-spacing: 11px;
-    left: 183px;
-    top: 38px;
-    width: 931px;
-    height: 56px;
-    text-align: center;
-    white-space: nowrap;
+  font-style: italic;
+  font-weight: bold;
+  position: fixed;
+  font-size: 66px;
+  letter-spacing: 11px;
+  left: 183px;
+  top: 38px;
+  width: 931px;
+  height: 56px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 
@@ -49,88 +48,82 @@ font-family: 'Audiowide', cursive;
   color:white;
   white-space: nowrap;
 }
-
-
   
 #s-beginning {
   font-style: italic;
-    font-weight: bold;
-    position: fixed;
-    font-size: 73px;
-    letter-spacing: 11px;
-    left: 59px;
-    top: 545px;
-    width: 172px;
-    height: 233px;
-    white-space: nowrap;;
+  font-weight: bold;
+  position: fixed;
+  font-size: 73px;
+  letter-spacing: 11px;
+  left: 59px;
+  top: 545px;
+  width: 172px;
+  height: 233px;
+  white-space: nowrap;
     
-
 }
 
 #s-beginning a {
 text-decoration: none;
-
 } 
 
 .s-newchunk-title {
-    font-style: italic;
-    font-weight: bold;
-    font-size: 15px;
-    letter-spacing: 2px;
-    top: 10px;
-    overflow: scroll;
-    color: white;
-    position: absolute;
-  }
+  font-style: italic;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 2px;
+  top: 10px;
+  overflow: scroll;
+  color: white;
+  position: absolute;
+}
 
 .s-newchunk-title a{
   text-decoration: none;
 }
 
 .s-newchunk-text {
-     
-    position: absolute;
-    letter-spacing: 1px;
-    top: 40px;
-    max-height: 80px;
-    overflow: scroll;
-    color: white;
-    margin-bottom: 5px;
-    font-family: "Courier New";
-    font-size: 15px;
+  position: absolute;
+  letter-spacing: 1px;
+  top: 40px;
+  max-height: 80px;
+  overflow: scroll;
+  color: white;
+  margin-bottom: 5px;
+  font-family: "Courier New";
+  font-size: 15px;
  }
 
 #s-box-o-scenes {
-    top: 135px;
-    left: 128px;
-    position: fixed;
-    overflow: scroll;
-    right: 165px;
-    min-height: 568;
-    bottom: 72px;
+  top: 135px;
+  left: 128px;
+  position: fixed;
+  overflow: scroll;
+  right: 165px;
+  min-height: 568;
+  bottom: 72px;
 }
 
 #s-users {
   font-style: italic;
   font-weight: bold;
-   font-size: 15px;
-    letter-spacing: 2px;
-    top: 200px; 
-    overflow: scroll;
-    color: white;
-  }
+  font-size: 15px;
+  letter-spacing: 2px;
+  top: 200px; 
+  overflow: scroll;
+  color: white;
+}
 
 
 .box {
   position: relative;
-    border-color: pink;
-    border-radius: 20px;
-    border-width: 1px;
-    margin: 20px;
-    left: 20px;
-    width: 931px;
-    height: 163px;
-
+  border-color: pink;
+  border-radius: 20px;
+  border-width: 1px;
+  margin: 20px;
+  left: 20px;
+  width: 931px;
+  height: 163px;
 }
  .s-video {
     position: absolute;
@@ -142,46 +135,43 @@ text-decoration: none;
 
 
   .s-image {
-        position: absolute;
+    position: absolute;
     top: 132px;
     height: 48px;
     width: 37px;
     left: 158px;
   }
 
-   .s-sound {
-  position: absolute;
+ .s-sound {
+    position: absolute;
     top: 128px;
     height: 48px;
     width: 49px;
     left: 10px;
-
   }
 
 </style>
-
-
 
 <div id="s-project-title">SCORE</div> 
 
 <div id="s-beginning"><a href="/<%=@project.pslug%>/index"><%= @project.title %></a></div>
 <div id="s-box-o-scenes">
-<%@highest_votes.each do |newchunk|%>
+  <%@highest_votes.each do |newchunk|%>
 
-<div class="box">
+    <div class="box">
 
-<div class="s-newchunk-title"><%= newchunk.title %></div>
- <div class="s-newchunk-text"><%= newchunk.text %></div>
+    <div class="s-newchunk-title"><%= newchunk.title %></div>
+    <div class="s-newchunk-text"><%= newchunk.text %></div>
 
-<div class="s-video"><a href="<%= newchunk.video_link %>" target="_blank"><img src="/images/video-camera.svg"></a></div>
-    
-<div class="s-image"><a href="<%= newchunk.image_link %>" target="_blank"><img src="/images/camera.svg"></a></div>
+    <div class="s-video"><a href="<%= newchunk.video_link %>" target="_blank"><img src="/images/video-camera.svg"></a></div>
+        
+    <div class="s-image"><a href="<%= newchunk.image_link %>" target="_blank"><img src="/images/camera.svg"></a></div>
 
-<div class="s-sound"><a href="<%= newchunk.sound_link %>" target="blank"><img src="/images/soundcloud.svg"></a></div>
+    <div class="s-sound"><a href="<%= newchunk.sound_link %>" target="blank"><img src="/images/soundcloud.svg"></a></div>
 
 
-</div>
- <% end %>
+    </div>
+   <% end %>
 
 </div>
 

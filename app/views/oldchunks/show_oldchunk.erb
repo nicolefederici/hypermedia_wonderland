@@ -1,7 +1,7 @@
 <p>Here are your Source Scenes (for now), <%= @user.username %></p>
 
-
-
+<!-- this is a feature I may want to include in the next refinement: to display all the source scenes worked on by each user
+ -->
 <% @user.oldchunks.each do |oldchunk| %>
  
  <p><%= oldchunk.title %></p>
