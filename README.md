@@ -1,4 +1,4 @@
-![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
+![Logo of the project](https://nicolefederici.files.wordpress.com/2016/12/screen-shot-2016-12-20-at-3-45-22-pm.png)
 
 # Hypermedia Wonderland
 > Collaborative Composition Platform
@@ -22,7 +22,7 @@ You will be asked to create a username and password, after which you will be abl
 
 ## Contributing
 
-This is primitive prototype that will be recast in Rails, eventually. I'm not looking for contributions at the moment, but feel free to suggest new features and tell me about any issues you have. I'm working to transfer the db to Postgres ASAP, so users can collaborate online.
+This is a primitive prototype that will be recast in Rails, eventually. I'm not looking for contributions at the moment, but feel free to suggest new features and tell me about any issues you have. I'm working to transfer the database to Postgres ASAP, so users can collaborate online. I will provide an appropriate license at that time. 
 
 ## Contact Me
 
@@ -32,16 +32,13 @@ https://www.linkedin.com/in/nicolefederici
 
 ## Features
 
-What's all the bells and whistles this project can perform?
 * collaborative creation of original material based upon an architechture the creater sets at the beginning of a project.
 * allows artists to add links of multi-media to their creative ideas in development.
 * collaborators can comment on any part of a project, and can vote up sections they love.
-* it creates a "score" of the best developed and most popular ideas within the poject.
+* it creates a "score" of the best developed and most popular ideas within the project.
 
 ## Licensing
 
-One really important part: Give your project a proper license. Here you should
-state what the license is and how to find the text version of the license.
-Something like:
+No License (for now)
 
-"The code in this project is licensed under MIT license."
+
